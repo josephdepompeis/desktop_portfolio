@@ -1,10 +1,10 @@
 body
     margin: 0
-    
+    overflow: hidden
 
     
 .wrapper
-    width: 100%
+    max-width: 100%
     height: 100vh
     background-image: url(images/wallpaper.jpg)
     background-size: cover
@@ -17,6 +17,7 @@ body
         position: fixed
         top: 0
         box-shadow: 0px 0px 25px 5px #888888
+        z-index: 999
         
         
 ul
@@ -37,18 +38,127 @@ ul.left
         display: inline-block
         margin: 5px 20px 0 0
         font-size: 16px
-        font-weight: 300
+        font-weight: 700
         
     li.bold
-        font-weight: 700
+        font-weight: 900
         
 ul.right
     display: block
     float: right
     li
         display: inline-block
-        margin: 4px 0 0 20px
-        font-size: 18px
-        font-weight: 400
+        margin: 5px 5px 0 10px
+        font-size: 16px
+        font-weight: 700
+
+#icon1 
+    position: absolute
+    right: 20px
+    top: 60px
+#icon2
+    position: absolute
+    right: 20px
+    top: 240px
         
+.desktop_icon
+    min-width: 120px
+    
+    
+    img 
+        height: 100px
+        width: 100px
+        
+        
+    p 
+        max-width: 100px
+        text-align: center
+        font-weight: 700
+        color: rgb(245,245,245)
+        text-shadow: 0px 2px 8px #111111
+       
+.windowAbout
+    height: 400px
+    width: 600px
+    background-color: white
+    position: relative
+    top: 20%
+    right: -100px
+    border-radius: 5px
+    z-index: 99
+    
+    
+    .windowBar
+        height: 40px
+        background-color: #DFDFDF
+        border-top-left-radius: 5px
+        border-top-right-radius: 5px
+        
+    .glyphicon-remove-sign
+        color: #DD3333
+        margin: 10px 2px 0 10px
+    .glyphicon-minus-sign
+        color: yellow
+        margin: 10px 2px 0 2px
+    .glyphicon-plus-sign    
+        color: #33DD33
+        margin: 10px 2px 0 2px
+        
+    .icon
+        
+        
+        img
+            position: absolute
+            top: 60% 
+            transform: translate(0%, -60%)
+            height: 300px
+            
+#dock
+    position: fixed
+    bottom: -5px
+    left: 50%
+    transform: translate(-50%)
+    height: 90px
+    min-width: 500px
+    background-color: rgba(175,175,175,0.9)
+    border-radius: 5px
+    
+   
+        
+    img
+        height: 60px
+        width:  60px
+        margin: 10px 5px 5px 5px
+    
+        
+            
+        
+    span.border
+        border-left: 2px solid gray
+        position: fixed
+        top: 10px
+        bottom: 20px
+        
+    .minFolder
+        float: left
+        display: none
+#sort
+    float: left
+        
+        
+#noSort
+    float: right
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     

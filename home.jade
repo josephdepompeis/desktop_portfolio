@@ -2,12 +2,15 @@ doctype html
 html
     head
         link(href="styles.css" rel="stylesheet")
+        script(src='js/javascripts.js')
         link(link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
         link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet')
-        script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
-        script(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css")
-        script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
+        
+        link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
+        
+        
     body
         .wrapper
             #topNav
@@ -25,10 +28,100 @@ html
                     li.glyphicon.glyphicon-th
                     li 100%
                     li Wed 5:58 PM
-                    li
-                    li
-                    li
+                    li Ian
+                    li.glyphicon.glyphicon-search
+                    li.glyphicon.glyphicon-menu-hamburger
+            
+            .desktop_icon#icon1 
+                img(src="images/hdd.png") 
+                p Macintosh 500BG HDD
+            .desktop_icon#icon2
+                img(src="images/folder.png" ) 
+                p Click Me
+                
+            .windowAbout
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign
+                        li.glyphicon.glyphicon-minus-sign
+                        li.glyphicon.glyphicon-plus-sign
+                    ul.tab
+                        li
+                        li
+                        li
+                        li
+                        li
+                .icon: img(src="images/cap.png")
+                span.about 
+                        
+                        
             #dock
-                .folder#folder_1 
-                .folder#folder_2
-                .folder#folder_3
+                #sort
+                    img(src="images/launchpad.png")
+                    img(src="images/AppStore.png")
+                    img(src="images/Chrome.png")
+                    img(src="images/itunes.png")
+                    img(src="images/messages.png")
+                    img(src="images/Settings.png")
+                    
+                #noSort    
+                    img(src="images/trash.png")
+                    .minFolder: img(src="images/folder.png" )
+                    span.border
+    
+    //-draggables
+    script.
+        $(function() {
+        $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false });
+        });
+        $(function() {
+        $( ".windowAbout" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar" });
+        });
+    //-sortables
+    script.
+        $(document).ready(function(){
+        $('#sort').sortable(
+        {
+        containment: "parent"
+        });
+        });
+    //- CSS changes 
+    script.
+        //- close window on click x
+        $('.glyphicon-remove-sign').click(function(){
+        $('.windowAbout').css("display", "none")
+        });
+        //-minimize window click - and add folder to dock
+        $('.glyphicon-minus-sign').click(function(){
+        $('.windowAbout').css("display", "none")
+        $('.minFolder').css("display", "block")
+        });
+        //- open on window doubleclick and remove folder from dock
+        $('#icon2').dblclick(function(){
+        $('.windowAbout').css("display", "block")
+        $('.minFolder').css("display", "none")
+        });
+        //- open window from dock
+        $('.minFolder').click(function(){
+        $('.windowAbout').css("display", "block")
+        $('.minFolder').css("display", "none")
+        });
+        //- increase widow size
+        $('.glyphicon-plus-sign').click(function(){
+        $('.windowAbout').css({
+        "height": "600px",
+        "width": "900px "
+        })
+
+        });
+        
+        
+        //- dubleclick to return window
+        $('.glyphicon-plus-sign').dblclick(function(){
+        $('.windowAbout').css({
+        "height": "400px",
+        "width": "600px "
+        })
+        
+        });
+        

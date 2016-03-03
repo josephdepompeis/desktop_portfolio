@@ -2,12 +2,12 @@
 <html>
   <head>
     <link href="styles.css" rel="stylesheet">
+    <script src="js/javascripts.js"></script>
     <link link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -27,16 +27,95 @@
           <li class="glyphicon glyphicon-th"></li>
           <li>100%</li>
           <li>Wed 5:58 PM</li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>Ian</li>
+          <li class="glyphicon glyphicon-search"></li>
+          <li class="glyphicon glyphicon-menu-hamburger"></li>
         </ul>
       </div>
+      <div id="icon1" class="desktop_icon"><img src="images/hdd.png">
+        <p>Macintosh 500BG HDD</p>
+      </div>
+      <div id="icon2" class="desktop_icon"><img src="images/folder.png">
+        <p>Click Me</p>
+      </div>
+      <div class="windowAbout">
+        <div class="windowBar">
+          <ul class="button">
+            <li class="glyphicon glyphicon-remove-sign"></li>
+            <li class="glyphicon glyphicon-minus-sign"></li>
+            <li class="glyphicon glyphicon-plus-sign"></li>
+          </ul>
+          <ul class="tab">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="icon"><img src="images/cap.png"></div><span class="about"></span>
+      </div>
       <div id="dock">
-        <div id="folder_1" class="folder"></div>
-        <div id="folder_2" class="folder"></div>
-        <div id="folder_3" class="folder"></div>
+        <div id="sort"><img src="images/launchpad.png"><img src="images/AppStore.png"><img src="images/Chrome.png"><img src="images/itunes.png"><img src="images/messages.png"><img src="images/Settings.png"></div>
+        <div id="noSort">   <img src="images/trash.png">
+          <div class="minFolder"><img src="images/folder.png"></div><span class="border"></span>
+        </div>
       </div>
     </div>
   </body>
+  <script>
+    $(function() {
+    $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false });
+    });
+    $(function() {
+    $( ".windowAbout" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar" });
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+    $('#sort').sortable(
+    {
+    containment: "parent"
+    });
+    });
+  </script>
+  <script>
+    //- close window on click x
+    $('.glyphicon-remove-sign').click(function(){
+    $('.windowAbout').css("display", "none")
+    });
+    //-minimize window click - and add folder to dock
+    $('.glyphicon-minus-sign').click(function(){
+    $('.windowAbout').css("display", "none")
+    $('.minFolder').css("display", "block")
+    });
+    //- open on window doubleclick and remove folder from dock
+    $('#icon2').dblclick(function(){
+    $('.windowAbout').css("display", "block")
+    $('.minFolder').css("display", "none")
+    });
+    //- open window from dock
+    $('.minFolder').click(function(){
+    $('.windowAbout').css("display", "block")
+    $('.minFolder').css("display", "none")
+    });
+    //- increase widow size
+    $('.glyphicon-plus-sign').click(function(){
+    $('.windowAbout').css({
+    "height": "600px",
+    "width": "900px "
+    })
+    
+    });
+    
+    
+    //- dubleclick to return window
+    $('.glyphicon-plus-sign').dblclick(function(){
+    $('.windowAbout').css({
+    "height": "400px",
+    "width": "600px "
+    })
+    
+    });
+  </script>
 </html>
