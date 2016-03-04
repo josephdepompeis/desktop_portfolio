@@ -1,10 +1,13 @@
 $bar: rgb(245,245,245)
-$transp-bar: rgba(245,245,245,0.55)
+$transp-bar: rgba(245,245,245,0.8)
 $dark-gray: #858585
 $light-gray: #CACACA
 $tab-gray:#B1B1B1
 $white: #eeeeee
 $blue: #0088cc
+$red: #FF6D61
+$yellow: #FFC661
+$transp-text: rgba(1,1,1,0.6)
 
 
 body
@@ -15,13 +18,13 @@ body
 .wrapper
     max-width: 100%
     height: 100vh
-    background-image: url(images/wallpaper.jpg)
+    background-image: url(images/wallpaper2.jpg)
     background-size: cover
     
     
     #topNav
         width: 100%
-        max-height: 30px
+        max-height: 22px
         background-color: $transp-bar
         position: fixed
         top: 0
@@ -45,7 +48,7 @@ ul.left
     float: left
     li
         display: inline-block
-        margin: 5px 20px 0 0
+        margin: 1px 20px 0 0
         font-size: 16px
         font-weight: 500
         
@@ -57,34 +60,31 @@ ul.right
     float: right
     li
         display: inline-block
-        margin: 5px 5px 0 10px
+        margin: 1px 5px 0 10px
         font-size: 16px
         font-weight: 500
 
-#icon1 
-    position: absolute
-    right: 20px
-    top: 60px
+
 #iconOverview
     position: absolute
     right: 20px
-    top: 220px
+    top: 60px
 #iconAbout
     position: absolute
     right: 20px
-    top: 380px
+    top: 220px
         
 .desktop_icon
     min-width: 120px
     
     
     img 
-        height: 100px
-        width: 100px
+        height: auto
+        width: 72px
         
         
     p 
-        max-width: 100px
+        width: 72px
         text-align: center
         font-weight: 700
         color: rgb(245,245,245)
@@ -94,17 +94,17 @@ ul.right
     height: 400px
     width: 600px
     background-color: rgba(245,245,245,1)
-    position: relative
-    top: 10%
-    left: 50px
+    //position: relative
+    //top: 15%
+    //left: 50px
     border-radius: 5px
-    z-index: 99
+    z-index: 999
     box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
     
     
     .windowBar
         height: 40px
-        background-color: $light-gray
+        background: linear-gradient(180deg, $light-gray, $tab-gray)
         border-top-left-radius: 5px
         border-top-right-radius: 5px
         
@@ -120,21 +120,21 @@ ul.right
             
             
             li
-                background-color: $tab-gray
+                //background-color: $tab-gray
                 padding: 3px 12px
-                font-weight: 400
-                border: 1px solid $white
-                border-radius: 5px
-                color: rgb(245,245,245)
-                letter-spacing: 1px
+                font-weight: 900
+                
+                //border-radius: 5px
+                color: rgba(1,1,1,0.6)
+                letter-spacing: 0px
                 
             
             
     .glyphicon-remove-sign
-        color: #DD3333
+        color: $red
         margin: 10px 2px 0 10px
     .glyphicon-minus-sign
-        color: yellow
+        color: $yellow
         margin: 10px 2px 0 2px
     .glyphicon-plus-sign    
         color: #33DD33
@@ -170,7 +170,7 @@ ul.right
     left: 50%
     transform: translate(-50%)
     height: 90px
-    min-width:400px
+    min-width: 400px
     max-width: 90%
     background-color: rgba(151,151,151,0.9)
     border-radius: 5px
@@ -178,6 +178,7 @@ ul.right
    
         
     img
+        
         height: 60px
         width:  60px
         margin: 10px 5px 5px 5px
@@ -188,7 +189,7 @@ ul.right
         
     span.border
         border-left: 2px solid gray
-        position: fixed
+        position: relative
         top: 10px
         bottom: 20px
         
@@ -215,13 +216,39 @@ ul.right
     
 .windowAbout
     display: none
+    //font-family: monospace;
+    
+.windowSettings    
+    display: none
     
     
-    
-    
-    
-    
-    
+    .setting
+        margin: 0
+        display: block
+        
+        .wallpaper   
+            margin: 2%
+            width: 150px
+            
+            
+            h4
+                border-bottom: 1px solid $light-gray
+                color: $transp-text
+                text-align: center
+                font-weight: 700
+            
+            button
+                width: 150px
+                margin: 5px 0
+                padding: 5px 10px
+                border: 0px
+                color: rgba(1,1,1,0.7)
+                background-color: $light-gray
+
+.windowOverview
+    position: relative
+    top: 12%
+    left: 80px
     
     
     

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -32,9 +33,6 @@
           <li class="glyphicon glyphicon-menu-hamburger"></li>
         </ul>
       </div>
-      <div id="icon1" class="desktop_icon"><img src="images/hdd.png">
-        <p>Macintosh 500BG HDD</p>
-      </div>
       <div id="iconOverview" class="desktop_icon"><img src="images/folder.png">
         <p>Overview</p>
       </div>
@@ -46,17 +44,16 @@
           <ul class="button">
             <li class="glyphicon glyphicon-remove-sign overviewClose"></li>
             <li class="glyphicon glyphicon-minus-sign overviewMin"></li>
-            <li class="glyphicon glyphicon-plus-sign overviewMax"></li>
           </ul>
           <ul class="tab">
-            <li>Overview</li>
+            <li>OVERVIEW</li>
           </ul>
         </div>
         <div class="windowIcon"></div><span class="about">
           <h1>Ian Anderson</h1>
           <h6>Version 4.0</h6>
-          <h3>Front End Designer</h3>
-          <p>Degree <span>Business Management</span></p>
+          <h3>Frontend Web Developer</h3>
+          <p>Degree <span> Business Management B.S.</span></p>
           <p>Experience<span>~1.5 years</span></p>
           <p>Languages<span>HTML/Jade, CSS/Sass, Javascript/jQuery</span></p>
           <p>Tools<span>Git, Photoshop, Atom/Brackets</span></p>
@@ -67,10 +64,9 @@
           <ul class="button">
             <li class="glyphicon glyphicon-remove-sign aboutClose"></li>
             <li class="glyphicon glyphicon-minus-sign aboutMin"></li>
-            <li class="glyphicon glyphicon-plus-sign aboutMax"></li>
           </ul>
           <ul class="tab">
-            <li>About</li>
+            <li>ABOUT</li>
           </ul>
         </div>
         <div class="windowIcon"></div><span class="about">
@@ -83,9 +79,38 @@
           <p>Tools<span>Git, Photoshop, Atom/Brackets</span></p>
           <p>Environments<span>Windows, Mac, Linux</span></p></span>
       </div>
+      <div class="window windowSettings">
+        <div class="windowBar">
+          <ul class="button">
+            <li class="glyphicon glyphicon-remove-sign settingsClose"></li>
+            <li class="glyphicon glyphicon-minus-sign settingsMin"></li>
+          </ul>
+          <ul class="tab">
+            <li>SETTINGS  </li>
+          </ul>
+        </div><span class="setting">
+          <div class="wallpaper">
+            <h4>Set Wallpaper</h4>
+            <ul class="backgroundChange">
+              <li>
+                <button class="background1">Mountains</button>
+              </li>
+              <li>
+                <button class="background2">Sherbet</button>
+              </li>
+              <li>
+                <button class="background3">Oceanic</button>
+              </li>
+              <li>
+                <button class="background4">Silver</button>
+              </li>
+            </ul>
+          </div></span>
+      </div>
       <div id="dock">
-        <div id="sort"><img src="images/twitter.png"><img src="images/reddit.png"><img src="images/github.png"><img src="images/insta.png"><img src="images/messages.png"><img src="images/Settings.png"></div>
-        <div id="noSort">   <span class="border"></span>
+        <div id="sort"><img src="images/twitter.png" id="dock1"><img src="images/reddit.png" id="dock2"><img src="images/github.png" id="dock3"><img src="images/insta.png" id="dock4"><img src="images/email.png" id="dock5"><img src="images/Settings.png" id="dock6"></div>
+        <div id="noSort">   
+          <!--span.border-->
           <div class="minFolderOverview"><img src="images/folder.png"></div>
           <p class="overviewDesc">Overview    </p>
           <div class="minFolderAbout"><img src="images/folder.png"></div>
@@ -96,11 +121,11 @@
   </body>
   <script>
     $(function() {
-    $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false});
+    $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false, stack: ".desktop_icon", distance: 0 });
     });
     
     $(function() {
-    $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: "div", distance: 0 });
+    $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: ".window", distance: 0 });
     });
     
     
@@ -122,7 +147,7 @@
     //-minimize overview click - and add folder to dock
     $('.overviewMin').click(function(){
     $('.windowOverview').css("display", "none")
-    $('.minFolderOverview').css("display", "inline-block")
+    $('.minFolderOverview').css("display", "block")
     $('#dock').css("min-width", "")
     //$('.overviewDesc').css("display", "block")
     });
@@ -136,8 +161,9 @@
     $('.windowOverview').css({
     "display": "block",
     "position": "absolute",
-    "top": "15%",
-    "left": "80px"
+    "top": "12%",
+    "left": "80px",
+    
     })
     $('.minFolderOverview').css("display", "none")
     });
@@ -146,24 +172,7 @@
     $('.windowOverview').css("display", "block")
     $('.minFolderOverview').css("display", "none")
     });
-    //- increase widow size
-    $('.overviewMax').click(function(){
-    $('.windowOverview').css({
-    "height": "600px",
-    "width": "900px "
-    })
     
-    });
-    
-    
-    //- dubleclick to return window
-    $('.overviewMax').dblclick(function(){
-    $('.windowOverview').css({
-    "height": "400px",
-    "width": "600px "
-    })
-    
-    });
     
     //About Window
     //- close window on click x
@@ -173,7 +182,7 @@
     //-minimize overview click - and add folder to dock
     $('.aboutMin').click(function(){
     $('.windowAbout').css("display", "none")
-    $('.minFolderAbout').css("display", "inline-block")
+    $('.minFolderAbout').css("display", "block")
     $('#dock').css("min-width", "")
     //$('.aboutDesc').css("display", "block")
     });
@@ -188,8 +197,9 @@
     $('.windowAbout').css({
     "display": "block",
     "position": "absolute",
-    "top": "12%",
-    "left": "80px"
+    "top": "16%",
+    "left": "100px",
+    
     })
     $('.minFolderAbout').css("display", "none")
     });
@@ -198,25 +208,36 @@
     $('.windowAbout').css("display", "block")
     $('.minFolderAbout').css("display", "none")
     });
-    //- increase widow size
-    $('.aboutMax').click(function(){
-    $('.windowAbout').css({
-    "height": "600px",
-    "width": "900px "
+    
+    //- Settings Window
+    //- close window on click x
+    $('.settingsClose').click(function(){
+    $('.windowSettings').css("display", "none")
+    });
+    //-minimize settings click 
+    $('.settingsMin').click(function(){
+    $('.windowSettings').css("display", "none")
+    
+    });
+    
+    
+    
+    //- open settings window from dock
+    $('#dock6').click(function(){
+    $('.windowSettings').css({
+    "display": "block",
+    "position": "absolute",
+    "top": "20%",
+    "left": "120px",
+    
     })
     
     });
     
     
-    //- dubleclick to return window
-    $('.aboutMax').dblclick(function(){
-    $('.windowAbout').css({
-    "height": "400px",
-    "width": "600px "
-    })
     
-    });
     
+    //resizable
   </script>
   <script>
     $(function() {
@@ -227,30 +248,83 @@
     });
     });
     
+    
   </script>
+  <!--moment js time-->
   <script>
-    (function () {
-    function checkTime(i) {
-    return (i < 10) ? "0" + i : i;
-    }
+    var datetime = null,
+            date = null;
+            
+    var update = function () {
+    date = moment(new Date())
+    datetime.html(date.format('dddd h:mm A'));
+    };
     
-    function startTime() {
-    var today = new Date(),
-    
-    h = checkTime(today.getHours()),
-    m = checkTime(today.getMinutes()),
-    s = checkTime(today.getSeconds());
-    document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
-    t = setTimeout(function () {
-    startTime()
-    }, 500);
-    }
-    startTime();
-    })();
+    $(document).ready(function(){
+    datetime = $('#time')
+    update();
+    setInterval(update, 1000);
+    });
     
   </script>
   <script>
     !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+    
+    
+  </script>
+  <!--dock bounce -->
+  <script>
+    $( "#dock1" ).click(function() {
+    $( "#dock1" ).effect( "bounce", {times:3}, 1000 );
+    });
+    
+    $( "#dock2" ).click(function() {
+    $( "#dock2" ).effect( "bounce", {times:3}, 1000 );
+    });
+    
+    $( "#dock3" ).click(function() {
+    $( "#dock3" ).effect( "bounce", {times:3}, 1000 );
+    });
+    
+    $( "#dock4" ).click(function() {
+    $( "#dock4" ).effect( "bounce", {times:3}, 1000 );
+    });
+    
+    $( "#dock5" ).click(function() {
+    $( "#dock5" ).effect( "bounce", {times:3}, 1000 );
+    });
+    //settings
+    $( "#dock6" ).click(function() {
+    $( "#dock6" ).effect( "bounce", {times:3}, 1000 );
+    });
+    
+    
+  </script>
+  <!--background select script-->
+  <script>
+    $('.background1').click(function() {
+    $('.wrapper').css('background-image', 'url(images/wallpaper.jpg)');
+    });
+    $('.background2').click(function() {
+    $('.wrapper').css('background-image', 'url(images/wallpaper2.jpg)');
+    });
+    $('.background3').click(function() {
+    $('.wrapper').css('background-image', 'url(images/wallpaper3.jpg)');
+    });
+    $('.background4').click(function() {
+    $('.wrapper').css('background-image', 'url(images/wallpaper4.jpg)');
+    });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
   </script>
 </html>

@@ -10,6 +10,8 @@ html
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
         
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js")
+        
         
     body
         .wrapper
@@ -32,9 +34,7 @@ html
                     li.glyphicon.glyphicon-search
                     li.glyphicon.glyphicon-menu-hamburger
             
-            .desktop_icon#icon1 
-                img(src="images/hdd.png") 
-                p Macintosh 500BG HDD
+            
             .desktop_icon#iconOverview
                 img(src="images/folder.png" ) 
                 p Overview
@@ -47,19 +47,19 @@ html
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.overviewClose
                         li.glyphicon.glyphicon-minus-sign.overviewMin
-                        li.glyphicon.glyphicon-plus-sign.overviewMax
+                        
                         
                     ul.tab
-                        li Overview
+                        li OVERVIEW
                         
                         
                 .windowIcon
                 span.about 
                     h1 Ian Anderson
                     h6 Version 4.0
-                    h3 Front End Designer
+                    h3 Frontend Web Developer
                     p Degree 
-                        span Business Management
+                        span  Business Management B.S.
                     p Experience
                         span ~1.5 years
                     p Languages
@@ -76,10 +76,10 @@ html
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.aboutClose
                         li.glyphicon.glyphicon-minus-sign.aboutMin
-                        li.glyphicon.glyphicon-plus-sign.aboutMax
+                        
 
                     ul.tab
-                        li About
+                        li ABOUT
                 .windowIcon
                 span.about 
                     h1 Ian Anderson
@@ -95,17 +95,35 @@ html
                         span Git, Photoshop, Atom/Brackets
                     p Environments
                         span Windows, Mac, Linux
+                        
+            .window.windowSettings
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign.settingsClose
+                        li.glyphicon.glyphicon-minus-sign.settingsMin
+                    ul.tab
+                        li SETTINGS  
+                span.setting
+                        .wallpaper
+                            h4 Set Wallpaper
+                            ul.backgroundChange
+                                li: button.background1 Mountains
+                                li: button.background2 Sherbet
+                                li: button.background3 Oceanic
+                                li: button.background4 Silver
+                        
+                        
             #dock
                 #sort
-                    img(src="images/twitter.png")
-                    img(src="images/reddit.png")
-                    img(src="images/github.png")
-                    img(src="images/insta.png")
-                    img(src="images/messages.png")
-                    img(src="images/Settings.png")
+                    img(src="images/twitter.png" id="dock1")
+                    img(src="images/reddit.png" id="dock2")
+                    img(src="images/github.png" id="dock3" )
+                    img(src="images/insta.png" id="dock4")
+                    img(src="images/email.png" id="dock5")
+                    img(src="images/Settings.png" id="dock6")
                     
                 #noSort    
-                    span.border
+                    //span.border
                     
                     .minFolderOverview: img(src="images/folder.png" )
                     p.overviewDesc Overview    
@@ -117,11 +135,11 @@ html
     //-draggables
     script.
         $(function() {
-        $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false});
+        $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false, stack: ".desktop_icon", distance: 0 });
         });
         
         $(function() {
-        $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: "div", distance: 0 });
+        $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: ".window", distance: 0 });
         });
         
     
@@ -143,7 +161,7 @@ html
         //-minimize overview click - and add folder to dock
         $('.overviewMin').click(function(){
         $('.windowOverview').css("display", "none")
-        $('.minFolderOverview').css("display", "inline-block")
+        $('.minFolderOverview').css("display", "block")
         $('#dock').css("min-width", "")
         //$('.overviewDesc').css("display", "block")
         });
@@ -157,8 +175,9 @@ html
         $('.windowOverview').css({
         "display": "block",
         "position": "absolute",
-        "top": "15%",
-        "left": "80px"
+        "top": "12%",
+        "left": "80px",
+        
         })
         $('.minFolderOverview').css("display", "none")
         });
@@ -167,24 +186,7 @@ html
         $('.windowOverview').css("display", "block")
         $('.minFolderOverview').css("display", "none")
         });
-        //- increase widow size
-        $('.overviewMax').click(function(){
-        $('.windowOverview').css({
-        "height": "600px",
-        "width": "900px "
-        })
-
-        });
         
-        
-        //- dubleclick to return window
-        $('.overviewMax').dblclick(function(){
-        $('.windowOverview').css({
-        "height": "400px",
-        "width": "600px "
-        })
-        
-        });
         
         //About Window
         //- close window on click x
@@ -194,7 +196,7 @@ html
         //-minimize overview click - and add folder to dock
         $('.aboutMin').click(function(){
         $('.windowAbout').css("display", "none")
-        $('.minFolderAbout').css("display", "inline-block")
+        $('.minFolderAbout').css("display", "block")
         $('#dock').css("min-width", "")
         //$('.aboutDesc').css("display", "block")
         });
@@ -209,8 +211,9 @@ html
         $('.windowAbout').css({
         "display": "block",
         "position": "absolute",
-        "top": "12%",
-        "left": "80px"
+        "top": "16%",
+        "left": "100px",
+        
         })
         $('.minFolderAbout').css("display", "none")
         });
@@ -219,25 +222,36 @@ html
         $('.windowAbout').css("display", "block")
         $('.minFolderAbout').css("display", "none")
         });
-        //- increase widow size
-        $('.aboutMax').click(function(){
-        $('.windowAbout').css({
-        "height": "600px",
-        "width": "900px "
-        })
-
+        
+        //- Settings Window
+        //- close window on click x
+        $('.settingsClose').click(function(){
+        $('.windowSettings').css("display", "none")
         });
-
-
-        //- dubleclick to return window
-        $('.aboutMax').dblclick(function(){
-        $('.windowAbout').css({
-        "height": "400px",
-        "width": "600px "
-        })
-
+        //-minimize settings click 
+        $('.settingsMin').click(function(){
+        $('.windowSettings').css("display", "none")
+        
         });
         
+
+        
+        //- open settings window from dock
+        $('#dock6').click(function(){
+        $('.windowSettings').css({
+        "display": "block",
+        "position": "absolute",
+        "top": "20%",
+        "left": "120px",
+        
+        })
+        
+        });
+        
+        
+        
+
+        //resizable
     script.
         $(function() {
         $( ".window" ).resizable({
@@ -246,28 +260,79 @@ html
         containment: ".wrapper"
         });
         });
-        
+    
+    
+    //moment js time
     script.
-        (function () {
-        function checkTime(i) {
-        return (i < 10) ? "0" + i : i;
-        }
+        var datetime = null,
+                date = null;
 
-        function startTime() {
-        var today = new Date(),
-        
-        h = checkTime(today.getHours()),
-        m = checkTime(today.getMinutes()),
-        s = checkTime(today.getSeconds());
-        document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
-        t = setTimeout(function () {
-        startTime()
-        }, 500);
-        }
-        startTime();
-        })();
+        var update = function () {
+        date = moment(new Date())
+        datetime.html(date.format('dddd h:mm A'));
+        };
+
+        $(document).ready(function(){
+        datetime = $('#time')
+        update();
+        setInterval(update, 1000);
+        });
         
     script.
         !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+     
+     
+    //dock bounce 
+    script.
+        $( "#dock1" ).click(function() {
+        $( "#dock1" ).effect( "bounce", {times:3}, 1000 );
+        });
         
+        $( "#dock2" ).click(function() {
+        $( "#dock2" ).effect( "bounce", {times:3}, 1000 );
+        });
+        
+        $( "#dock3" ).click(function() {
+        $( "#dock3" ).effect( "bounce", {times:3}, 1000 );
+        });
+        
+        $( "#dock4" ).click(function() {
+        $( "#dock4" ).effect( "bounce", {times:3}, 1000 );
+        });
+        
+        $( "#dock5" ).click(function() {
+        $( "#dock5" ).effect( "bounce", {times:3}, 1000 );
+        });
+        //settings
+        $( "#dock6" ).click(function() {
+        $( "#dock6" ).effect( "bounce", {times:3}, 1000 );
+        });
     
+    
+    //background select script
+    script.
+        $('.background1').click(function() {
+        $('.wrapper').css('background-image', 'url(images/wallpaper.jpg)');
+        });
+        $('.background2').click(function() {
+        $('.wrapper').css('background-image', 'url(images/wallpaper2.jpg)');
+        });
+        $('.background3').click(function() {
+        $('.wrapper').css('background-image', 'url(images/wallpaper3.jpg)');
+        });
+        $('.background4').click(function() {
+        $('.wrapper').css('background-image', 'url(images/wallpaper4.jpg)');
+        });
+
+    
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
