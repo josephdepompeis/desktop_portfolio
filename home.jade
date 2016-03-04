@@ -16,7 +16,7 @@ html
             #topNav
                 ul.left
                     li.glyphicon.glyphicon-apple
-                    li.bold Finder
+                    li.bold ianOS
                     li File
                     li Edit
                     li View
@@ -27,56 +27,104 @@ html
                     li.glyphicon.glyphicon-signal
                     li.glyphicon.glyphicon-th
                     li 100%
-                    li Wed 5:58 PM
-                    li Ian
+                    li#time
+                    li Ian Anderson
                     li.glyphicon.glyphicon-search
                     li.glyphicon.glyphicon-menu-hamburger
             
             .desktop_icon#icon1 
                 img(src="images/hdd.png") 
                 p Macintosh 500BG HDD
-            .desktop_icon#icon2
+            .desktop_icon#iconOverview
                 img(src="images/folder.png" ) 
-                p Click Me
+                p Overview
+            .desktop_icon#iconAbout
+                img(src="images/folder.png" ) 
+                p About
                 
-            .windowAbout
+            .window.windowOverview
                 .windowBar
                     ul.button
-                        li.glyphicon.glyphicon-remove-sign
-                        li.glyphicon.glyphicon-minus-sign
-                        li.glyphicon.glyphicon-plus-sign
+                        li.glyphicon.glyphicon-remove-sign.overviewClose
+                        li.glyphicon.glyphicon-minus-sign.overviewMin
+                        li.glyphicon.glyphicon-plus-sign.overviewMax
+                        
                     ul.tab
-                        li
-                        li
-                        li
-                        li
-                        li
-                .icon: img(src="images/cap.png")
+                        li Overview
+                        
+                        
+                .windowIcon
                 span.about 
+                    h1 Ian Anderson
+                    h6 Version 4.0
+                    h3 Front End Designer
+                    p Degree 
+                        span Business Management
+                    p Experience
+                        span ~1.5 years
+                    p Languages
+                        span HTML/Jade, CSS/Sass, Javascript/jQuery
+                    p Tools
+                        span Git, Photoshop, Atom/Brackets
+                    p Environments
+                        span Windows, Mac, Linux
+                    
+              
                         
-                        
+            .window.windowAbout
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign.aboutClose
+                        li.glyphicon.glyphicon-minus-sign.aboutMin
+                        li.glyphicon.glyphicon-plus-sign.aboutMax
+
+                    ul.tab
+                        li About
+                .windowIcon
+                span.about 
+                    h1 Ian Anderson
+                    h6 Version 4.0
+                    h3 Web Designer
+                    p Degree 
+                        span Business Management
+                    p Experience
+                        span ~1.5 years
+                    p Languages
+                        span HTML/Jade, CSS/Sass, Javascript/jQuery
+                    p Tools
+                        span Git, Photoshop, Atom/Brackets
+                    p Environments
+                        span Windows, Mac, Linux
             #dock
                 #sort
-                    img(src="images/launchpad.png")
-                    img(src="images/AppStore.png")
-                    img(src="images/Chrome.png")
-                    img(src="images/itunes.png")
+                    img(src="images/twitter.png")
+                    img(src="images/reddit.png")
+                    img(src="images/github.png")
+                    img(src="images/insta.png")
                     img(src="images/messages.png")
                     img(src="images/Settings.png")
                     
                 #noSort    
-                    img(src="images/trash.png")
-                    .minFolder: img(src="images/folder.png" )
                     span.border
+                    
+                    .minFolderOverview: img(src="images/folder.png" )
+                    p.overviewDesc Overview    
+                    .minFolderAbout: img(src="images/folder.png" )
+                    p.aboutDesc About
+                    img(src="images/trash.png")
+                    
     
     //-draggables
     script.
         $(function() {
-        $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false });
+        $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false});
         });
+        
         $(function() {
-        $( ".windowAbout" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar" });
+        $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: "div", distance: 0 });
         });
+        
+    
     //-sortables
     script.
         $(document).ready(function(){
@@ -87,28 +135,41 @@ html
         });
     //- CSS changes 
     script.
+        //- Overview Window
         //- close window on click x
-        $('.glyphicon-remove-sign').click(function(){
-        $('.windowAbout').css("display", "none")
+        $('.overviewClose').click(function(){
+        $('.windowOverview').css("display", "none")
         });
-        //-minimize window click - and add folder to dock
-        $('.glyphicon-minus-sign').click(function(){
-        $('.windowAbout').css("display", "none")
-        $('.minFolder').css("display", "block")
+        //-minimize overview click - and add folder to dock
+        $('.overviewMin').click(function(){
+        $('.windowOverview').css("display", "none")
+        $('.minFolderOverview').css("display", "inline-block")
+        $('#dock').css("min-width", "")
+        //$('.overviewDesc').css("display", "block")
         });
-        //- open on window doubleclick and remove folder from dock
-        $('#icon2').dblclick(function(){
-        $('.windowAbout').css("display", "block")
-        $('.minFolder').css("display", "none")
+        //- open on overiew doubleclick and remove folder from dock
+        $('#iconOverview').dblclick(function(){
+        $('.windowOverview').css("display", "block")
+        $('.minFolderOverview').css("display", "none")
+        });
+        
+        $('#iconOverview').dblclick(function(){
+        $('.windowOverview').css({
+        "display": "block",
+        "position": "absolute",
+        "top": "15%",
+        "left": "80px"
+        })
+        $('.minFolderOverview').css("display", "none")
         });
         //- open window from dock
-        $('.minFolder').click(function(){
-        $('.windowAbout').css("display", "block")
-        $('.minFolder').css("display", "none")
+        $('.minFolderOverview').click(function(){
+        $('.windowOverview').css("display", "block")
+        $('.minFolderOverview').css("display", "none")
         });
         //- increase widow size
-        $('.glyphicon-plus-sign').click(function(){
-        $('.windowAbout').css({
+        $('.overviewMax').click(function(){
+        $('.windowOverview').css({
         "height": "600px",
         "width": "900px "
         })
@@ -117,11 +178,96 @@ html
         
         
         //- dubleclick to return window
-        $('.glyphicon-plus-sign').dblclick(function(){
-        $('.windowAbout').css({
+        $('.overviewMax').dblclick(function(){
+        $('.windowOverview').css({
         "height": "400px",
         "width": "600px "
         })
         
         });
         
+        //About Window
+        //- close window on click x
+        $('.aboutClose').click(function(){
+        $('.windowAbout').css("display", "none")
+        });
+        //-minimize overview click - and add folder to dock
+        $('.aboutMin').click(function(){
+        $('.windowAbout').css("display", "none")
+        $('.minFolderAbout').css("display", "inline-block")
+        $('#dock').css("min-width", "")
+        //$('.aboutDesc').css("display", "block")
+        });
+        //- open on overiew doubleclick and remove folder from dock
+        $('#iconAbout').dblclick(function(){
+        $('.windowAbout').css("display", "block")
+        $('.minFolderAbout').css("display", "none")
+        
+        });
+
+        $('#iconAbout').dblclick(function(){
+        $('.windowAbout').css({
+        "display": "block",
+        "position": "absolute",
+        "top": "12%",
+        "left": "80px"
+        })
+        $('.minFolderAbout').css("display", "none")
+        });
+        //- open window from dock
+        $('.minFolderAbout').click(function(){
+        $('.windowAbout').css("display", "block")
+        $('.minFolderAbout').css("display", "none")
+        });
+        //- increase widow size
+        $('.aboutMax').click(function(){
+        $('.windowAbout').css({
+        "height": "600px",
+        "width": "900px "
+        })
+
+        });
+
+
+        //- dubleclick to return window
+        $('.aboutMax').dblclick(function(){
+        $('.windowAbout').css({
+        "height": "400px",
+        "width": "600px "
+        })
+
+        });
+        
+    script.
+        $(function() {
+        $( ".window" ).resizable({
+        minWidth: 600, 
+        minHeight: 400,
+        containment: ".wrapper"
+        });
+        });
+        
+    script.
+        (function () {
+        function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+        }
+
+        function startTime() {
+        var today = new Date(),
+        
+        h = checkTime(today.getHours()),
+        m = checkTime(today.getMinutes()),
+        s = checkTime(today.getSeconds());
+        document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
+        t = setTimeout(function () {
+        startTime()
+        }, 500);
+        }
+        startTime();
+        })();
+        
+    script.
+        !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+        
+    

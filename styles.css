@@ -1,155 +1,216 @@
+/* line 10, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 body {
   margin: 0;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
+/* line 15, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 .wrapper {
   max-width: 100%;
   height: 100vh;
   background-image: url(images/wallpaper.jpg);
-  background-size: cover;
-}
-.wrapper #topNav {
-  width: 100%;
-  max-height: 30px;
-  background-color: rgba(245, 245, 245, 0.55);
-  position: fixed;
-  top: 0;
-  box-shadow: 0px 0px 25px 5px #888888;
-  z-index: 999;
-}
+  background-size: cover; }
+  /* line 22, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .wrapper #topNav {
+    width: 100%;
+    max-height: 30px;
+    background-color: rgba(245, 245, 245, 0.55);
+    position: fixed;
+    top: 0;
+    box-shadow: 0px 0px 25px 5px #888888;
+    z-index: 999; }
 
+/* line 32, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 ul {
   list-style-type: none;
-  padding: 0;
-}
+  padding: 0; }
 
+/* line 36, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 .glyphicon-apple {
-  padding: 0 0 0 20px;
-}
+  padding: 0 0 0 20px; }
 
+/* line 39, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 .glyphicon {
   top: 0;
-  font-size: 18px;
-}
+  font-size: 18px; }
 
+/* line 43, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 ul.left {
   display: block;
-  float: left;
-}
-ul.left li {
-  display: inline-block;
-  margin: 5px 20px 0 0;
-  font-size: 16px;
-  font-weight: 700;
-}
-ul.left li.bold {
-  font-weight: 900;
-}
+  float: left; }
+  /* line 46, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  ul.left li {
+    display: inline-block;
+    margin: 5px 20px 0 0;
+    font-size: 16px;
+    font-weight: 500; }
+  /* line 52, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  ul.left li.bold {
+    font-weight: 900; }
 
+/* line 55, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 ul.right {
   display: block;
-  float: right;
-}
-ul.right li {
-  display: inline-block;
-  margin: 5px 5px 0 10px;
-  font-size: 16px;
-  font-weight: 700;
-}
+  float: right; }
+  /* line 58, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  ul.right li {
+    display: inline-block;
+    margin: 5px 5px 0 10px;
+    font-size: 16px;
+    font-weight: 500; }
 
+/* line 64, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 #icon1 {
   position: absolute;
   right: 20px;
-  top: 60px;
-}
+  top: 60px; }
 
-#icon2 {
+/* line 68, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+#iconOverview {
   position: absolute;
   right: 20px;
-  top: 240px;
-}
+  top: 220px; }
 
+/* line 72, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+#iconAbout {
+  position: absolute;
+  right: 20px;
+  top: 380px; }
+
+/* line 77, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 .desktop_icon {
-  min-width: 120px;
-}
-.desktop_icon img {
-  height: 100px;
-  width: 100px;
-}
-.desktop_icon p {
-  max-width: 100px;
-  text-align: center;
-  font-weight: 700;
-  color: whitesmoke;
-  text-shadow: 0px 2px 8px #111111;
-}
+  min-width: 120px; }
+  /* line 81, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .desktop_icon img {
+    height: 100px;
+    width: 100px; }
+  /* line 86, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .desktop_icon p {
+    max-width: 100px;
+    text-align: center;
+    font-weight: 700;
+    color: whitesmoke;
+    text-shadow: 0px 2px 8px #111111; }
 
-.windowAbout {
+/* line 93, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+.window {
   height: 400px;
   width: 600px;
-  background-color: white;
+  background-color: whitesmoke;
   position: relative;
-  top: 20%;
-  right: -100px;
+  top: 10%;
+  left: 50px;
   border-radius: 5px;
   z-index: 99;
-}
-.windowAbout .windowBar {
-  height: 40px;
-  background-color: #dfdfdf;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.windowAbout .glyphicon-remove-sign {
-  color: #dd3333;
-  margin: 10px 2px 0 10px;
-}
-.windowAbout .glyphicon-minus-sign {
-  color: yellow;
-  margin: 10px 2px 0 2px;
-}
-.windowAbout .glyphicon-plus-sign {
-  color: #33dd33;
-  margin: 10px 2px 0 2px;
-}
-.windowAbout .icon img {
-  position: absolute;
-  top: 60%;
-  transform: translate(0%, -60%);
-  height: 300px;
-}
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2); }
+  /* line 105, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .window .windowBar {
+    height: 40px;
+    background-color: #CACACA;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px; }
+    /* line 111, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+    .window .windowBar ul.button {
+      display: inline-block; }
+    /* line 114, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+    .window .windowBar ul.tab {
+      display: inline-block;
+      position: relative;
+      left: 43%;
+      bottom: 3px;
+      transform: translate(-100%); }
+      /* line 122, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+      .window .windowBar ul.tab li {
+        background-color: #B1B1B1;
+        padding: 3px 12px;
+        font-weight: 400;
+        border: 1px solid #eeeeee;
+        border-radius: 5px;
+        color: whitesmoke;
+        letter-spacing: 1px; }
+  /* line 133, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .window .glyphicon-remove-sign {
+    color: #DD3333;
+    margin: 10px 2px 0 10px; }
+  /* line 136, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .window .glyphicon-minus-sign {
+    color: yellow;
+    margin: 10px 2px 0 2px; }
+  /* line 139, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .window .glyphicon-plus-sign {
+    color: #33DD33;
+    margin: 10px 2px 0 2px; }
+  /* line 145, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .window .windowIcon {
+    width: 32%;
+    float: left; }
+    /* line 149, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+    .window .windowIcon img {
+      position: absolute;
+      top: 60%;
+      transform: translate(0%, -60%);
+      height: 300px; }
+  /* line 155, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  .window .about {
+    text-align: left;
+    width: 66%;
+    float: right; }
+    /* line 160, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+    .window .about p {
+      font-weight: 700; }
+      /* line 162, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+      .window .about p span {
+        font-weight: 300;
+        padding-left: 10px; }
 
+/* line 167, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 #dock {
   position: fixed;
   bottom: -5px;
   left: 50%;
   transform: translate(-50%);
   height: 90px;
-  min-width: 500px;
-  background-color: rgba(175, 175, 175, 0.9);
-  border-radius: 5px;
-}
-#dock img {
-  height: 60px;
-  width: 60px;
-  margin: 10px 5px 5px 5px;
-}
-#dock span.border {
-  border-left: 2px solid gray;
-  position: fixed;
-  top: 10px;
-  bottom: 20px;
-}
-#dock .minFolder {
-  float: left;
-  display: none;
-}
+  min-width: 400px;
+  max-width: 90%;
+  background-color: rgba(151, 151, 151, 0.9);
+  border-radius: 5px; }
+  /* line 180, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  #dock img {
+    height: 60px;
+    width: 60px;
+    margin: 10px 5px 5px 5px;
+    float: right; }
+  /* line 189, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  #dock span.border {
+    border-left: 2px solid gray;
+    position: fixed;
+    top: 10px;
+    bottom: 20px; }
+  /* line 195, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  #dock .minFolderOverview {
+    float: left;
+    display: none; }
+  /* line 198, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  #dock .minFolderAbout {
+    float: left;
+    display: none; }
 
+/* line 201, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 #sort {
-  float: left;
-}
+  float: left; }
 
+/* line 205, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
 #noSort {
-  float: right;
-}
+  float: right; }
+  /* line 208, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+  #noSort p {
+    position: relative;
+    top: -10px;
+    left: 4px;
+    display: none;
+    font-weight: 700; }
+
+/* line 216, C:/Users/Ian/Desktop/Web Design/iosDesktop/styles.sass */
+.windowAbout {
+  display: none; }
+
+/*# sourceMappingURL=styles.css.map */

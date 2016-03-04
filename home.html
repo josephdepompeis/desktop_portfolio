@@ -14,7 +14,7 @@
       <div id="topNav">
         <ul class="left">
           <li class="glyphicon glyphicon-apple"></li>
-          <li class="bold">Finder</li>
+          <li class="bold">ianOS</li>
           <li>File</li>
           <li>Edit</li>
           <li>View</li>
@@ -26,8 +26,8 @@
           <li class="glyphicon glyphicon-signal"></li>
           <li class="glyphicon glyphicon-th"></li>
           <li>100%</li>
-          <li>Wed 5:58 PM</li>
-          <li>Ian</li>
+          <li id="time"></li>
+          <li>Ian Anderson</li>
           <li class="glyphicon glyphicon-search"></li>
           <li class="glyphicon glyphicon-menu-hamburger"></li>
         </ul>
@@ -35,41 +35,75 @@
       <div id="icon1" class="desktop_icon"><img src="images/hdd.png">
         <p>Macintosh 500BG HDD</p>
       </div>
-      <div id="icon2" class="desktop_icon"><img src="images/folder.png">
-        <p>Click Me</p>
+      <div id="iconOverview" class="desktop_icon"><img src="images/folder.png">
+        <p>Overview</p>
       </div>
-      <div class="windowAbout">
+      <div id="iconAbout" class="desktop_icon"><img src="images/folder.png">
+        <p>About</p>
+      </div>
+      <div class="window windowOverview">
         <div class="windowBar">
           <ul class="button">
-            <li class="glyphicon glyphicon-remove-sign"></li>
-            <li class="glyphicon glyphicon-minus-sign"></li>
-            <li class="glyphicon glyphicon-plus-sign"></li>
+            <li class="glyphicon glyphicon-remove-sign overviewClose"></li>
+            <li class="glyphicon glyphicon-minus-sign overviewMin"></li>
+            <li class="glyphicon glyphicon-plus-sign overviewMax"></li>
           </ul>
           <ul class="tab">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li>Overview</li>
           </ul>
         </div>
-        <div class="icon"><img src="images/cap.png"></div><span class="about"></span>
+        <div class="windowIcon"></div><span class="about">
+          <h1>Ian Anderson</h1>
+          <h6>Version 4.0</h6>
+          <h3>Front End Designer</h3>
+          <p>Degree <span>Business Management</span></p>
+          <p>Experience<span>~1.5 years</span></p>
+          <p>Languages<span>HTML/Jade, CSS/Sass, Javascript/jQuery</span></p>
+          <p>Tools<span>Git, Photoshop, Atom/Brackets</span></p>
+          <p>Environments<span>Windows, Mac, Linux</span></p></span>
+      </div>
+      <div class="window windowAbout">
+        <div class="windowBar">
+          <ul class="button">
+            <li class="glyphicon glyphicon-remove-sign aboutClose"></li>
+            <li class="glyphicon glyphicon-minus-sign aboutMin"></li>
+            <li class="glyphicon glyphicon-plus-sign aboutMax"></li>
+          </ul>
+          <ul class="tab">
+            <li>About</li>
+          </ul>
+        </div>
+        <div class="windowIcon"></div><span class="about">
+          <h1>Ian Anderson</h1>
+          <h6>Version 4.0</h6>
+          <h3>Web Designer</h3>
+          <p>Degree <span>Business Management</span></p>
+          <p>Experience<span>~1.5 years</span></p>
+          <p>Languages<span>HTML/Jade, CSS/Sass, Javascript/jQuery</span></p>
+          <p>Tools<span>Git, Photoshop, Atom/Brackets</span></p>
+          <p>Environments<span>Windows, Mac, Linux</span></p></span>
       </div>
       <div id="dock">
-        <div id="sort"><img src="images/launchpad.png"><img src="images/AppStore.png"><img src="images/Chrome.png"><img src="images/itunes.png"><img src="images/messages.png"><img src="images/Settings.png"></div>
-        <div id="noSort">   <img src="images/trash.png">
-          <div class="minFolder"><img src="images/folder.png"></div><span class="border"></span>
+        <div id="sort"><img src="images/twitter.png"><img src="images/reddit.png"><img src="images/github.png"><img src="images/insta.png"><img src="images/messages.png"><img src="images/Settings.png"></div>
+        <div id="noSort">   <span class="border"></span>
+          <div class="minFolderOverview"><img src="images/folder.png"></div>
+          <p class="overviewDesc">Overview    </p>
+          <div class="minFolderAbout"><img src="images/folder.png"></div>
+          <p class="aboutDesc">About</p><img src="images/trash.png">
         </div>
       </div>
     </div>
   </body>
   <script>
     $(function() {
-    $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false });
+    $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false});
     });
+    
     $(function() {
-    $( ".windowAbout" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar" });
+    $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: "div", distance: 0 });
     });
+    
+    
   </script>
   <script>
     $(document).ready(function(){
@@ -80,27 +114,92 @@
     });
   </script>
   <script>
+    //- Overview Window
     //- close window on click x
-    $('.glyphicon-remove-sign').click(function(){
-    $('.windowAbout').css("display", "none")
+    $('.overviewClose').click(function(){
+    $('.windowOverview').css("display", "none")
     });
-    //-minimize window click - and add folder to dock
-    $('.glyphicon-minus-sign').click(function(){
-    $('.windowAbout').css("display", "none")
-    $('.minFolder').css("display", "block")
+    //-minimize overview click - and add folder to dock
+    $('.overviewMin').click(function(){
+    $('.windowOverview').css("display", "none")
+    $('.minFolderOverview').css("display", "inline-block")
+    $('#dock').css("min-width", "")
+    //$('.overviewDesc').css("display", "block")
     });
-    //- open on window doubleclick and remove folder from dock
-    $('#icon2').dblclick(function(){
-    $('.windowAbout').css("display", "block")
-    $('.minFolder').css("display", "none")
+    //- open on overiew doubleclick and remove folder from dock
+    $('#iconOverview').dblclick(function(){
+    $('.windowOverview').css("display", "block")
+    $('.minFolderOverview').css("display", "none")
+    });
+    
+    $('#iconOverview').dblclick(function(){
+    $('.windowOverview').css({
+    "display": "block",
+    "position": "absolute",
+    "top": "15%",
+    "left": "80px"
+    })
+    $('.minFolderOverview').css("display", "none")
     });
     //- open window from dock
-    $('.minFolder').click(function(){
-    $('.windowAbout').css("display", "block")
-    $('.minFolder').css("display", "none")
+    $('.minFolderOverview').click(function(){
+    $('.windowOverview').css("display", "block")
+    $('.minFolderOverview').css("display", "none")
     });
     //- increase widow size
-    $('.glyphicon-plus-sign').click(function(){
+    $('.overviewMax').click(function(){
+    $('.windowOverview').css({
+    "height": "600px",
+    "width": "900px "
+    })
+    
+    });
+    
+    
+    //- dubleclick to return window
+    $('.overviewMax').dblclick(function(){
+    $('.windowOverview').css({
+    "height": "400px",
+    "width": "600px "
+    })
+    
+    });
+    
+    //About Window
+    //- close window on click x
+    $('.aboutClose').click(function(){
+    $('.windowAbout').css("display", "none")
+    });
+    //-minimize overview click - and add folder to dock
+    $('.aboutMin').click(function(){
+    $('.windowAbout').css("display", "none")
+    $('.minFolderAbout').css("display", "inline-block")
+    $('#dock').css("min-width", "")
+    //$('.aboutDesc').css("display", "block")
+    });
+    //- open on overiew doubleclick and remove folder from dock
+    $('#iconAbout').dblclick(function(){
+    $('.windowAbout').css("display", "block")
+    $('.minFolderAbout').css("display", "none")
+    
+    });
+    
+    $('#iconAbout').dblclick(function(){
+    $('.windowAbout').css({
+    "display": "block",
+    "position": "absolute",
+    "top": "12%",
+    "left": "80px"
+    })
+    $('.minFolderAbout').css("display", "none")
+    });
+    //- open window from dock
+    $('.minFolderAbout').click(function(){
+    $('.windowAbout').css("display", "block")
+    $('.minFolderAbout').css("display", "none")
+    });
+    //- increase widow size
+    $('.aboutMax').click(function(){
     $('.windowAbout').css({
     "height": "600px",
     "width": "900px "
@@ -110,12 +209,48 @@
     
     
     //- dubleclick to return window
-    $('.glyphicon-plus-sign').dblclick(function(){
+    $('.aboutMax').dblclick(function(){
     $('.windowAbout').css({
     "height": "400px",
     "width": "600px "
     })
     
     });
+    
+  </script>
+  <script>
+    $(function() {
+    $( ".window" ).resizable({
+    minWidth: 600, 
+    minHeight: 400,
+    containment: ".wrapper"
+    });
+    });
+    
+  </script>
+  <script>
+    (function () {
+    function checkTime(i) {
+    return (i < 10) ? "0" + i : i;
+    }
+    
+    function startTime() {
+    var today = new Date(),
+    
+    h = checkTime(today.getHours()),
+    m = checkTime(today.getMinutes()),
+    s = checkTime(today.getSeconds());
+    document.getElementById('time').innerHTML =  h + ":" + m + ":" + s;
+    t = setTimeout(function () {
+    startTime()
+    }, 500);
+    }
+    startTime();
+    })();
+    
+  </script>
+  <script>
+    !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+    
   </script>
 </html>

@@ -1,3 +1,12 @@
+$bar: rgb(245,245,245)
+$transp-bar: rgba(245,245,245,0.55)
+$dark-gray: #858585
+$light-gray: #CACACA
+$tab-gray:#B1B1B1
+$white: #eeeeee
+$blue: #0088cc
+
+
 body
     margin: 0
     overflow: hidden
@@ -13,7 +22,7 @@ body
     #topNav
         width: 100%
         max-height: 30px
-        background-color: rgba(245,245,245,0.55)
+        background-color: $transp-bar
         position: fixed
         top: 0
         box-shadow: 0px 0px 25px 5px #888888
@@ -38,7 +47,7 @@ ul.left
         display: inline-block
         margin: 5px 20px 0 0
         font-size: 16px
-        font-weight: 700
+        font-weight: 500
         
     li.bold
         font-weight: 900
@@ -50,16 +59,20 @@ ul.right
         display: inline-block
         margin: 5px 5px 0 10px
         font-size: 16px
-        font-weight: 700
+        font-weight: 500
 
 #icon1 
     position: absolute
     right: 20px
     top: 60px
-#icon2
+#iconOverview
     position: absolute
     right: 20px
-    top: 240px
+    top: 220px
+#iconAbout
+    position: absolute
+    right: 20px
+    top: 380px
         
 .desktop_icon
     min-width: 120px
@@ -77,23 +90,46 @@ ul.right
         color: rgb(245,245,245)
         text-shadow: 0px 2px 8px #111111
        
-.windowAbout
+.window
     height: 400px
     width: 600px
-    background-color: white
+    background-color: rgba(245,245,245,1)
     position: relative
-    top: 20%
-    right: -100px
+    top: 10%
+    left: 50px
     border-radius: 5px
     z-index: 99
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2)
     
     
     .windowBar
         height: 40px
-        background-color: #DFDFDF
+        background-color: $light-gray
         border-top-left-radius: 5px
         border-top-right-radius: 5px
         
+        ul.button
+            display: inline-block
+        
+        ul.tab
+            display: inline-block
+            position: relative
+            left: 43%
+            bottom: 3px
+            transform: translate(-100%)
+            
+            
+            li
+                background-color: $tab-gray
+                padding: 3px 12px
+                font-weight: 400
+                border: 1px solid $white
+                border-radius: 5px
+                color: rgb(245,245,245)
+                letter-spacing: 1px
+                
+            
+            
     .glyphicon-remove-sign
         color: #DD3333
         margin: 10px 2px 0 10px
@@ -104,8 +140,11 @@ ul.right
         color: #33DD33
         margin: 10px 2px 0 2px
         
-    .icon
         
+        
+    .windowIcon
+        width: 32%
+        float: left
         
         img
             position: absolute
@@ -113,14 +152,27 @@ ul.right
             transform: translate(0%, -60%)
             height: 300px
             
+    .about
+        text-align: left
+        width: 66%
+        float: right
+        
+        p
+            font-weight: 700
+            span
+                font-weight: 300
+                padding-left: 10px
+            
+            
 #dock
     position: fixed
     bottom: -5px
     left: 50%
     transform: translate(-50%)
     height: 90px
-    min-width: 500px
-    background-color: rgba(175,175,175,0.9)
+    min-width:400px
+    max-width: 90%
+    background-color: rgba(151,151,151,0.9)
     border-radius: 5px
     
    
@@ -129,6 +181,7 @@ ul.right
         height: 60px
         width:  60px
         margin: 10px 5px 5px 5px
+        float: right
     
         
             
@@ -139,7 +192,10 @@ ul.right
         top: 10px
         bottom: 20px
         
-    .minFolder
+    .minFolderOverview
+        float: left
+        display: none
+    .minFolderAbout
         float: left
         display: none
 #sort
@@ -149,9 +205,16 @@ ul.right
 #noSort
     float: right
     
+    p
+        position: relative
+        top: -10px
+        left: 4px
+        display: none
+        font-weight: 700
+        
     
-    
-    
+.windowAbout
+    display: none
     
     
     
