@@ -172,8 +172,8 @@ html
         $(document).ready(function(){
         $('#sort').sortable(
         {
-        containment: "",
-        connectToSortable: "#dock"
+        containment: "parent",
+        
         
         });
         });
@@ -404,7 +404,6 @@ html
         $('.background5').click(function() {
         $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
         });
-
     
         
 
