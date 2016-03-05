@@ -20,6 +20,7 @@ body {
 }
 .wrapper #topNav .help {
   background-color: none;
+  cursor: default;
 }
 
 ul {
@@ -101,20 +102,15 @@ ul.right li {
 }
 .window .windowBar {
   height: 40px;
-  background: linear-gradient(180deg, #cacaca, #b1b1b1);
+  background: #e7eaed;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  cursor: move;
 }
 .window .windowBar ul.button {
   display: inline-block;
 }
 .window .windowBar ul.tab {
   display: inline-block;
-  position: relative;
-  left: 43%;
-  bottom: 3px;
-  transform: translate(-100%);
 }
 .window .windowBar ul.tab li {
   padding: 3px 12px;
@@ -126,14 +122,14 @@ ul.right li {
   cursor: auto;
 }
 .window .glyphicon-remove-sign {
-  color: rgba(245, 245, 245, 0.8);
+  color: #cacaca;
   margin: 10px 2px 0 10px;
 }
 .window .glyphicon-remove-sign:hover {
   color: #ff6d61;
 }
 .window .glyphicon-minus-sign {
-  color: rgba(245, 245, 245, 0.8);
+  color: #cacaca;
   margin: 10px 2px 0 2px;
 }
 .window .glyphicon-minus-sign:hover {
@@ -303,10 +299,27 @@ ul.right li {
 .windowEmail input {
   width: 100%;
   padding: 5px 0;
+  background: whitesmoke;
+  border: 0;
+}
+.windowEmail input:focus {
+  outline: none;
 }
 .windowEmail textarea {
-  height: 200px;
+  min-height: 200px;
   width: 100%;
   max-width: 100%;
   max-height: 200px;
+  margin: 5px 0 0 0;
+  border: 0;
+  background: whitesmoke;
+}
+.windowEmail textarea:focus {
+  outline: none;
+}
+.windowEmail input[type=submit] {
+  border: 1px solid #cacaca;
+}
+.windowEmail input[type=submit]:hover {
+  background: linear-gradient(180deg, #66ff66, #97c1ea);
 }
