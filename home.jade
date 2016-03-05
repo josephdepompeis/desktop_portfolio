@@ -12,7 +12,7 @@ html
         
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js")
         
-        
+            
     body
         .wrapper
             #topNav
@@ -41,7 +41,16 @@ html
             .desktop_icon#iconAbout
                 img(src="images/folder.png" ) 
                 p About
-                
+            .desktop_icon#iconPortfolio
+                img(src="images/folder.png" ) 
+                p Portfolio
+            .desktop_icon#iconWelcome
+                img(src="images/folder.png" ) 
+                p Welcome
+            .desktop_icon#iconBooks
+                img(src="images/folder.png" ) 
+                p Bookshelf        
+            
             .window.windowOverview
                 .windowBar
                     ul.button
@@ -127,15 +136,15 @@ html
                         li.glyphicon.glyphicon-remove-sign.emailClose
                         li.glyphicon.glyphicon-minus-sign.emailMin
                     ul.tab
-                        li EMAIL 
+                        li EMAIL to: ian@theiananderson.com
                 form(action="//formspree.io/ianderso222@gmail.com" method="POST")
                     
                     input(type="text" name="name" placeholder="Name")     
                     
                     input(type="email" name="_replyto" placeholder="Email") 
                     
-                    textarea(type="text" name="message" placeholder="Tell me something..") 
-                    input(type="submit" value="Send")
+                    textarea(type="text" name="message" placeholder="Let's work on something...") 
+                    input(type="submit" value="SEND")
             
             #dock
                 #sort
@@ -195,6 +204,7 @@ html
         $('#iconOverview').dblclick(function(){
         $('.windowOverview').css("display", "block")
         $('.minFolderOverview').css("display", "none")
+        
         });
         
         $('#iconOverview').dblclick(function(){
@@ -233,13 +243,15 @@ html
         $('.minFolderAbout').css("display", "none")
         
         });
-
+    
+    script.
         $('#iconAbout').dblclick(function(){
         $('.windowAbout').css({
         "display": "block",
         "position": "absolute",
         "top": "16%",
         "left": "100px",
+        
         
         })
         $('.minFolderAbout').css("display", "none")
@@ -262,8 +274,9 @@ html
         });
         
 
-        
+              
         //- open settings window from dock
+    script.
         $('#dock6').click(function(){
         $('.windowSettings').css({
         "display": "block",
@@ -286,7 +299,7 @@ html
 
         });
 
-        //- open email window from dock
+        // open email window from dock
         $('#dock5').click(function(){
         $('.windowEmail').css({
         "display": "block",
@@ -300,7 +313,10 @@ html
         
     script.   
         $('.help').click(function(){
-        $('.windowHelp').css("display", "block")
+        $('.windowHelp').css({
+        "display": "block",
+        "position": "absolute"
+        })
         });
         $('.helpClose').click(function(){
         $('.windowHelp').css("display", "none")
@@ -404,11 +420,9 @@ html
         $('.background5').click(function() {
         $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
         });
+    script.
     
-        
 
-        
-        
         
         
         

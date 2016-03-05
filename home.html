@@ -39,6 +39,15 @@
       <div id="iconAbout" class="desktop_icon"><img src="images/folder.png">
         <p>About</p>
       </div>
+      <div id="iconPortfolio" class="desktop_icon"><img src="images/folder.png">
+        <p>Portfolio</p>
+      </div>
+      <div id="iconWelcome" class="desktop_icon"><img src="images/folder.png">
+        <p>Welcome</p>
+      </div>
+      <div id="iconBooks" class="desktop_icon"><img src="images/folder.png">
+        <p>Bookshelf        </p>
+      </div>
       <div class="window windowOverview">
         <div class="windowBar">
           <ul class="button">
@@ -125,14 +134,14 @@
             <li class="glyphicon glyphicon-minus-sign emailMin"></li>
           </ul>
           <ul class="tab">
-            <li>EMAIL </li>
+            <li>EMAIL to: ian@theiananderson.com</li>
           </ul>
         </div>
         <form action="//formspree.io/ianderso222@gmail.com" method="POST">
           <input type="text" name="name" placeholder="Name">
           <input type="email" name="_replyto" placeholder="Email">
-          <textarea type="text" name="message" placeholder="Tell me something.."></textarea>
-          <input type="submit" value="Send">
+          <textarea type="text" name="message" placeholder="Let's work on something..."></textarea>
+          <input type="submit" value="SEND">
         </form>
       </div>
       <div id="dock">
@@ -186,6 +195,7 @@
     $('#iconOverview').dblclick(function(){
     $('.windowOverview').css("display", "block")
     $('.minFolderOverview').css("display", "none")
+    
     });
     
     $('#iconOverview').dblclick(function(){
@@ -225,12 +235,15 @@
     
     });
     
+  </script>
+  <script>
     $('#iconAbout').dblclick(function(){
     $('.windowAbout').css({
     "display": "block",
     "position": "absolute",
     "top": "16%",
     "left": "100px",
+    
     
     })
     $('.minFolderAbout').css("display", "none")
@@ -255,6 +268,8 @@
     
     
     //- open settings window from dock
+  </script>
+  <script>
     $('#dock6').click(function(){
     $('.windowSettings').css({
     "display": "block",
@@ -277,7 +292,7 @@
     
     });
     
-    //- open email window from dock
+    // open email window from dock
     $('#dock5').click(function(){
     $('.windowEmail').css({
     "display": "block",
@@ -292,7 +307,10 @@
   </script>
   <script>
     $('.help').click(function(){
-    $('.windowHelp').css("display", "block")
+    $('.windowHelp').css({
+    "display": "block",
+    "position": "absolute"
+    })
     });
     $('.helpClose').click(function(){
     $('.windowHelp').css("display", "none")
@@ -402,16 +420,6 @@
     $('.background5').click(function() {
     $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
     });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
   </script>
+  <script></script>
 </html>
