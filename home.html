@@ -128,6 +128,12 @@
             <li>EMAIL </li>
           </ul>
         </div>
+        <form action="//formspree.io/ianderso222@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Name">
+          <input type="email" name="_replyto" placeholder="Email">
+          <textarea type="text" name="message" placeholder="Tell me something.."></textarea>
+          <input type="submit" value="Send">
+        </form>
       </div>
       <div id="dock">
         <div id="sort"><img src="images/twitter.png" id="dock1"><img src="images/reddit.png" id="dock2"><img src="images/github.png" id="dock3"><img src="images/insta.png" id="dock4"><img src="images/email.png" id="dock5"><img src="images/Settings.png" id="dock6"></div>
@@ -305,12 +311,27 @@
   </script>
   <script>
     $(function() {
-    $( ".window" ).resizable({
+    $( ".windowOverview" ).resizable({
     minWidth: 550, 
     minHeight: 350,
     containment: ".wrapper"
     });
     });
+    $(function() {
+    $( ".windowAbout" ).resizable({
+    minWidth: 550, 
+    minHeight: 350,
+    containment: ".wrapper"
+    });
+    });
+    $(function() {
+    $( ".windowSettings" ).resizable({
+    minWidth: 550, 
+    minHeight: 350,
+    containment: ".wrapper"
+    });
+    });
+    
     
     
   </script>

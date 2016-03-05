@@ -128,7 +128,14 @@ html
                         li.glyphicon.glyphicon-minus-sign.emailMin
                     ul.tab
                         li EMAIL 
-            
+                form(action="//formspree.io/ianderso222@gmail.com" method="POST")
+                    
+                    input(type="text" name="name" placeholder="Name")     
+                    
+                    input(type="email" name="_replyto" placeholder="Email") 
+                    
+                    textarea(type="text" name="message" placeholder="Tell me something..") 
+                    input(type="submit" value="Send")
             
             #dock
                 #sort
@@ -310,13 +317,28 @@ html
         //resizable
     script.
         $(function() {
-        $( ".window" ).resizable({
+        $( ".windowOverview" ).resizable({
         minWidth: 550, 
         minHeight: 350,
         containment: ".wrapper"
         });
         });
-    
+        $(function() {
+        $( ".windowAbout" ).resizable({
+        minWidth: 550, 
+        minHeight: 350,
+        containment: ".wrapper"
+        });
+        });
+        $(function() {
+        $( ".windowSettings" ).resizable({
+        minWidth: 550, 
+        minHeight: 350,
+        containment: ".wrapper"
+        });
+        });
+        
+        
     
     //moment js time
     script.
