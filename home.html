@@ -21,7 +21,7 @@
           <li>View</li>
           <li>Go</li>
           <li>Window</li>
-          <li>Help</li>
+          <li class="help">Help</li>
         </ul>
         <ul class="right">
           <li class="glyphicon glyphicon-signal"></li>
@@ -104,8 +104,30 @@
               <li>
                 <button class="background4">Silver</button>
               </li>
+              <li>
+                <button class="background5">nightLights</button>
+              </li>
             </ul>
           </div></span>
+      </div>
+      <div class="windowHelp"><span class="helpText">
+          <h4>Need Help?</h4>
+          <h3></h3>
+          <ul>
+            <li>
+              <button class="helpClose">Close</button>
+            </li>
+          </ul></span></div>
+      <div class="window windowEmail">
+        <div class="windowBar">
+          <ul class="button">
+            <li class="glyphicon glyphicon-remove-sign emailClose"></li>
+            <li class="glyphicon glyphicon-minus-sign emailMin"></li>
+          </ul>
+          <ul class="tab">
+            <li>EMAIL </li>
+          </ul>
+        </div>
       </div>
       <div id="dock">
         <div id="sort"><img src="images/twitter.png" id="dock1"><img src="images/reddit.png" id="dock2"><img src="images/github.png" id="dock3"><img src="images/insta.png" id="dock4"><img src="images/email.png" id="dock5"><img src="images/Settings.png" id="dock6"></div>
@@ -114,7 +136,8 @@
           <div class="minFolderOverview"><img src="images/folder.png"></div>
           <p class="overviewDesc">Overview    </p>
           <div class="minFolderAbout"><img src="images/folder.png"></div>
-          <p class="aboutDesc">About</p><img src="images/trash.png">
+          <p class="aboutDesc">About</p>
+          <!--img(src="images/trash.png")-->
         </div>
       </div>
     </div>
@@ -134,7 +157,9 @@
     $(document).ready(function(){
     $('#sort').sortable(
     {
-    containment: "parent"
+    containment: "",
+    connectToSortable: "#dock"
+    
     });
     });
   </script>
@@ -165,6 +190,7 @@
     "left": "80px",
     
     })
+    
     $('.minFolderOverview').css("display", "none")
     });
     //- open window from dock
@@ -234,16 +260,54 @@
     
     });
     
+    //Email Window
+    //- close window on click x
+    $('.emailClose').click(function(){
+    $('.windowEmail').css("display", "none")
+    });
+    //-minimize email click 
+    $('.emailMin').click(function(){
+    $('.windowEmail').css("display", "none")
     
+    });
     
+    //- open email window from dock
+    $('#dock5').click(function(){
+    $('.windowEmail').css({
+    "display": "block",
+    "position": "absolute",
+    "top": "24%",
+    "left": "140px",
+    
+    })
+    
+    });
+    
+  </script>
+  <script>
+    $('.help').click(function(){
+    $('.windowHelp').css("display", "block")
+    });
+    $('.helpClose').click(function(){
+    $('.windowHelp').css("display", "none")
+    $('.help').css('background-color', '');
+    });
+    
+  </script>
+  <script>
+    $(".help").click(function(){
+    if ($('.windowHelp').css('display') === "block") {
+    $('.help').css('background-color', '#B1B1B1');
+    }  
+    });
     
     //resizable
   </script>
   <script>
     $(function() {
     $( ".window" ).resizable({
-    minWidth: 600, 
-    minHeight: 400,
+    minWidth: 550, 
+    minHeight: 350,
     containment: ".wrapper"
     });
     });
@@ -313,6 +377,9 @@
     });
     $('.background4').click(function() {
     $('.wrapper').css('background-image', 'url(images/wallpaper4.jpg)');
+    });
+    $('.background5').click(function() {
+    $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
     });
     
     

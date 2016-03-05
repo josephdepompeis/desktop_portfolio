@@ -18,6 +18,9 @@ body {
   box-shadow: 0px 0px 25px 5px #888888;
   z-index: 999;
 }
+.wrapper #topNav .help {
+  background-color: none;
+}
 
 ul {
   list-style-type: none;
@@ -39,7 +42,8 @@ ul.left {
 }
 ul.left li {
   display: inline-block;
-  margin: 1px 20px 0 0;
+  margin: 0;
+  padding: 0 10px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -53,7 +57,8 @@ ul.right {
 }
 ul.right li {
   display: inline-block;
-  margin: 1px 5px 0 10px;
+  margin: 0;
+  padding: 1px 10px;
   font-size: 16px;
   font-weight: 500;
 }
@@ -67,11 +72,12 @@ ul.right li {
 #iconAbout {
   position: absolute;
   right: 20px;
-  top: 220px;
+  top: 160px;
 }
 
 .desktop_icon {
   min-width: 120px;
+  cursor: pointer;
 }
 .desktop_icon img {
   height: auto;
@@ -86,8 +92,8 @@ ul.right li {
 }
 
 .window {
-  height: 400px;
-  width: 600px;
+  height: 350px;
+  width: 550px;
   background-color: whitesmoke;
   border-radius: 5px;
   z-index: 999;
@@ -98,6 +104,7 @@ ul.right li {
   background: linear-gradient(180deg, #cacaca, #b1b1b1);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  cursor: move;
 }
 .window .windowBar ul.button {
   display: inline-block;
@@ -115,17 +122,22 @@ ul.right li {
   color: rgba(1, 1, 1, 0.6);
   letter-spacing: 0px;
 }
+.window .glyphicon {
+  cursor: auto;
+}
 .window .glyphicon-remove-sign {
-  color: #ff6d61;
+  color: rgba(245, 245, 245, 0.8);
   margin: 10px 2px 0 10px;
 }
+.window .glyphicon-remove-sign:hover {
+  color: #ff6d61;
+}
 .window .glyphicon-minus-sign {
-  color: #ffc661;
+  color: rgba(245, 245, 245, 0.8);
   margin: 10px 2px 0 2px;
 }
-.window .glyphicon-plus-sign {
-  color: #33dd33;
-  margin: 10px 2px 0 2px;
+.window .glyphicon-minus-sign:hover {
+  color: #ffc661;
 }
 .window .windowIcon {
   width: 32%;
@@ -166,6 +178,7 @@ ul.right li {
   width: 60px;
   margin: 10px 5px 5px 5px;
   float: right;
+  cursor: pointer;
 }
 #dock span.border {
   border-left: 2px solid gray;
@@ -222,13 +235,68 @@ ul.right li {
   width: 150px;
   margin: 5px 0;
   padding: 5px 10px;
-  border: 0px;
+  border: 0;
+  border-radius: 0px;
   color: rgba(1, 1, 1, 0.7);
-  background-color: #cacaca;
+  background: linear-gradient(180deg, #cacaca, #b1b1b1);
+  cursor: pointer;
+}
+.windowSettings .setting .wallpaper button:hover {
+  background: linear-gradient(180deg, #7db1e5, #97c1ea);
+}
+.windowSettings .setting .wallpaper button:active {
+  background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1);
+  background: -o-linear-gradient(0deg, #cacaca, #b1b1b1);
+  background: linear-gradient(0deg, #cacaca, #b1b1b1);
+}
+.windowSettings .setting .wallpaper button:focus {
+  outline: 0;
 }
 
 .windowOverview {
   position: relative;
   top: 12%;
   left: 80px;
+}
+
+.windowHelp {
+  display: none;
+  height: 400px;
+  width: 300px;
+  background-color: rgba(245, 245, 245, 0.8);
+  border-radius: 0px;
+  position: absolute;
+  top: 22px;
+  left: 402px;
+  z-index: 999;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+}
+.windowHelp .helpText {
+  text-align: left;
+}
+.windowHelp .helpText button {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 0px;
+  color: rgba(1, 1, 1, 0.7);
+  background: linear-gradient(180deg, #cacaca, #b1b1b1);
+}
+.windowHelp .helpText button:hover {
+  background: #ff6d61;
+}
+.windowHelp .helpText button:active {
+  background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1);
+  background: -o-linear-gradient(0deg, #cacaca, #b1b1b1);
+  background: linear-gradient(0deg, #cacaca, #b1b1b1);
+}
+.windowHelp .helpText button:focus {
+  outline: 0;
+}
+
+.windowEmail {
+  display: none;
 }

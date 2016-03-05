@@ -24,7 +24,7 @@ html
                     li View
                     li Go
                     li Window
-                    li Help
+                    li.help Help
                 ul.right
                     li.glyphicon.glyphicon-signal
                     li.glyphicon.glyphicon-th
@@ -111,8 +111,25 @@ html
                                 li: button.background2 Sherbet
                                 li: button.background3 Oceanic
                                 li: button.background4 Silver
+                                li: button.background5 nightLights
                         
-                        
+            .windowHelp
+                
+                span.helpText
+                    h4 Need Help?
+                    h3
+                    ul
+                        li: button.helpClose Close
+            
+            .window.windowEmail
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign.emailClose
+                        li.glyphicon.glyphicon-minus-sign.emailMin
+                    ul.tab
+                        li EMAIL 
+            
+            
             #dock
                 #sort
                     img(src="images/twitter.png" id="dock1")
@@ -129,7 +146,7 @@ html
                     p.overviewDesc Overview    
                     .minFolderAbout: img(src="images/folder.png" )
                     p.aboutDesc About
-                    img(src="images/trash.png")
+                    //img(src="images/trash.png")
                     
     
     //-draggables
@@ -148,7 +165,9 @@ html
         $(document).ready(function(){
         $('#sort').sortable(
         {
-        containment: "parent"
+        containment: "",
+        connectToSortable: "#dock"
+        
         });
         });
     //- CSS changes 
@@ -179,6 +198,7 @@ html
         "left": "80px",
         
         })
+        
         $('.minFolderOverview').css("display", "none")
         });
         //- open window from dock
@@ -248,15 +268,51 @@ html
         
         });
         
-        
-        
+        //Email Window
+        //- close window on click x
+        $('.emailClose').click(function(){
+        $('.windowEmail').css("display", "none")
+        });
+        //-minimize email click 
+        $('.emailMin').click(function(){
+        $('.windowEmail').css("display", "none")
 
+        });
+
+        //- open email window from dock
+        $('#dock5').click(function(){
+        $('.windowEmail').css({
+        "display": "block",
+        "position": "absolute",
+        "top": "24%",
+        "left": "140px",
+
+        })
+
+        });
+        
+    script.   
+        $('.help').click(function(){
+        $('.windowHelp').css("display", "block")
+        });
+        $('.helpClose').click(function(){
+        $('.windowHelp').css("display", "none")
+        $('.help').css('background-color', '');
+        });
+        
+    script.
+        $(".help").click(function(){
+        if ($('.windowHelp').css('display') === "block") {
+        $('.help').css('background-color', '#B1B1B1');
+        }  
+        });
+        
         //resizable
     script.
         $(function() {
         $( ".window" ).resizable({
-        minWidth: 600, 
-        minHeight: 400,
+        minWidth: 550, 
+        minHeight: 350,
         containment: ".wrapper"
         });
         });
@@ -322,6 +378,9 @@ html
         });
         $('.background4').click(function() {
         $('.wrapper').css('background-image', 'url(images/wallpaper4.jpg)');
+        });
+        $('.background5').click(function() {
+        $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
         });
 
     
