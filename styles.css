@@ -22,7 +22,7 @@ body {
   background-color: none;
   cursor: default;
 }
-.wrapper #topNav li:hover {
+.wrapper #topNav ul.left li:hover {
   background: linear-gradient(180deg, #bde0f1, #33a0d6);
   cursor: default;
 }
