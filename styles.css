@@ -22,6 +22,9 @@ body {
   background-color: none;
   cursor: default;
 }
+.wrapper #topNav ul.left li {
+  position: relative;
+}
 .wrapper #topNav ul.left li:hover {
   background: linear-gradient(180deg, #bde0f1, #33a0d6);
   cursor: default;
@@ -57,7 +60,8 @@ ul.left li {
   font-weight: 500;
 }
 ul.left li.bold {
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 ul.right {
@@ -374,4 +378,8 @@ ul.right li {
 }
 .windowEmail input[type=submit]:hover {
   background: linear-gradient(180deg, #a3ffa3, #b1ffb1);
+}
+
+a.desktop_icon:hover {
+  text-decoration: none;
 }

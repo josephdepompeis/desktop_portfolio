@@ -27,6 +27,8 @@ body
     background-size: cover
 
 
+
+
     #topNav
         width: 100%
         max-height: 22px
@@ -41,6 +43,8 @@ body
             cursor: default
 
         ul.left li
+            position: relative
+
             &:hover
                 background: $blueButton
                 cursor: default
@@ -71,7 +75,8 @@ ul.left
         font-weight: 500
 
     li.bold
-        font-weight: 900
+        font-weight: 700
+        font-size: 16px
 
 ul.right
     display: block
@@ -394,3 +399,7 @@ ul.right
         bottom: 0
         &:hover
             background: $emailButton
+
+a.desktop_icon
+    &:hover
+        text-decoration: none

@@ -33,20 +33,22 @@
           <li class="glyphicon glyphicon-menu-hamburger"></li>
         </ul>
       </div>
-      <div id="iconOverview" class="desktop_icon"><img src="images/folder.png">
-        <p>Overview</p>
-      </div>
-      <div id="iconAbout" class="desktop_icon"><img src="images/folder.png">
-        <p>About</p>
-      </div>
-      <div id="iconPortfolio" class="desktop_icon"><img src="images/folder.png">
-        <p>Portfolio</p>
-      </div>
-      <div id="iconWelcome" class="desktop_icon"><img src="images/folder.png">
-        <p>Welcome</p>
-      </div>
-      <div id="iconBooks" class="desktop_icon"><img src="images/folder.png">
-        <p>Bookshelf        </p>
+      <div class="desktop_icon">
+        <div id="iconOverview"><img src="images/folder.png">
+          <p>Overview</p>
+        </div>
+        <div id="iconAbout"><img src="images/folder.png">
+          <p>About</p>
+        </div>
+        <div id="iconPortfolio"><img src="images/folder.png">
+          <p>Portfolio</p>
+        </div>
+        <div id="iconWelcome"><img src="images/folder.png">
+          <p>Welcome</p>
+        </div>
+        <div id="iconBooks"><img src="images/folder.png">
+          <p>Bookshelf        </p>
+        </div>
       </div>
       <div class="window windowOverview">
         <div class="windowBar">
@@ -145,7 +147,7 @@
         </form>
       </div>
       <div id="dock">
-        <div id="sort"><img src="images/twitter.png" id="dock1"><img src="images/reddit.png" id="dock2"><img src="images/github.png" id="dock3"><img src="images/insta.png" id="dock4"><img src="images/email.png" id="dock5"><img src="images/Settings.png" id="dock6"></div>
+        <div id="sort"><img src="images/twitter.png" id="dockTwitter"><img src="images/reddit.png" id="dockReddit"><img src="images/github.png" id="dockGithub"><img src="images/insta.png" id="dockInsta"><img src="images/email.png" id="dockEmail"><img src="images/Settings.png" id="dockSettings"></div>
         <div id="noSort">   
           <!--span.border-->
           <div class="minFolderOverview"><img src="images/folder.png"></div>
@@ -181,6 +183,7 @@
   <script>
     //- Overview Window
     //- close window on click x
+    z = 0;
     $('.overviewClose').click(function(){
     $('.windowOverview').css("display", "none")
     });
@@ -192,19 +195,19 @@
     //$('.overviewDesc').css("display", "block")
     });
     //- open on overiew doubleclick and remove folder from dock
-    $('#iconOverview').dblclick(function(){
+    $('#iconOverview').click(function(){
     $('.windowOverview').css("display", "block")
     $('.minFolderOverview').css("display", "none")
     
     });
     
-    $('#iconOverview').dblclick(function(){
+    $('#iconOverview').click(function(){
     $('.windowOverview').css({
     "display": "block",
     "position": "absolute",
     "top": "12%",
     "left": "80px",
-    
+    "z-index": ++z
     })
     
     $('.minFolderOverview').css("display", "none")
@@ -229,21 +232,18 @@
     //$('.aboutDesc').css("display", "block")
     });
     //- open on overiew doubleclick and remove folder from dock
-    $('#iconAbout').dblclick(function(){
+    $('#iconAbout').click(function(){
     $('.windowAbout').css("display", "block")
     $('.minFolderAbout').css("display", "none")
     
     });
-    
-  </script>
-  <script>
-    $('#iconAbout').dblclick(function(){
+    $('#iconAbout').click(function(){
     $('.windowAbout').css({
     "display": "block",
     "position": "absolute",
     "top": "16%",
     "left": "100px",
-    
+    "z-index": ++z
     
     })
     $('.minFolderAbout').css("display", "none")
@@ -263,24 +263,17 @@
     $('.settingsMin').click(function(){
     $('.windowSettings').css("display", "none")
     
-    });
-    
-    
-    
+    });      
     //- open settings window from dock
-  </script>
-  <script>
-    $('#dock6').click(function(){
+    $('#dockSettings').click(function(){
     $('.windowSettings').css({
     "display": "block",
     "position": "absolute",
     "top": "20%",
     "left": "120px",
-    
+    "z-index": ++z
     })
-    
     });
-    
     //Email Window
     //- close window on click x
     $('.emailClose').click(function(){
@@ -289,23 +282,18 @@
     //-minimize email click 
     $('.emailMin').click(function(){
     $('.windowEmail').css("display", "none")
-    
-    });
-    
+    });   
     // open email window from dock
-    $('#dock5').click(function(){
+    $('#dockEmail').click(function(){
     $('.windowEmail').css({
     "display": "block",
     "position": "absolute",
     "top": "24%",
     "left": "140px",
-    
+    "z-index": ++z
     })
-    
     });
     
-  </script>
-  <script>
     $('.help').click(function(){
     $('.windowHelp').css({
     "display": "block",
@@ -317,8 +305,6 @@
     $('.help').css('background-color', '');
     });
     
-  </script>
-  <script>
     $(".help").click(function(){
     if ($('.windowHelp').css('display') === "block") {
     $('.help').css('background-color', '#B1B1B1');
@@ -377,28 +363,28 @@
   </script>
   <!--dock bounce -->
   <script>
-    $( "#dock1" ).click(function() {
-    $( "#dock1" ).effect( "bounce", {times:3}, 1000 );
+    $( "#dockTwitter" ).click(function() {
+    $( "#dockTwitter" ).effect( "bounce", {times:3}, 1000 );
     });
     
-    $( "#dock2" ).click(function() {
-    $( "#dock2" ).effect( "bounce", {times:3}, 1000 );
+    $( "#dockReddit" ).click(function() {
+    $( "#dockReddit" ).effect( "bounce", {times:3}, 1000 );
     });
     
-    $( "#dock3" ).click(function() {
-    $( "#dock3" ).effect( "bounce", {times:3}, 1000 );
+    $( "#dockGithub" ).click(function() {
+    $( "#dockGithub" ).effect( "bounce", {times:3}, 1000 );
     });
     
-    $( "#dock4" ).click(function() {
-    $( "#dock4" ).effect( "bounce", {times:3}, 1000 );
+    $( "#dockInsta" ).click(function() {
+    $( "#dockInsta" ).effect( "bounce", {times:3}, 1000 );
     });
     
-    $( "#dock5" ).click(function() {
-    $( "#dock5" ).effect( "bounce", {times:3}, 1000 );
+    $( "#dockEmail" ).click(function() {
+    $( "#dockEmail" ).effect( "bounce", {times:3}, 1000 );
     });
     //settings
-    $( "#dock6" ).click(function() {
-    $( "#dock6" ).effect( "bounce", {times:3}, 1000 );
+    $( "#dockSettings" ).click(function() {
+    $( "#dockSettings" ).effect( "bounce", {times:3}, 1000 );
     });
     
     
@@ -420,6 +406,14 @@
     $('.background5').click(function() {
     $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
     });
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </script>
-  <script></script>
 </html>

@@ -35,21 +35,22 @@ html
                     li.glyphicon.glyphicon-menu-hamburger
             
             
-            .desktop_icon#iconOverview
-                img(src="images/folder.png" ) 
-                p Overview
-            .desktop_icon#iconAbout
-                img(src="images/folder.png" ) 
-                p About
-            .desktop_icon#iconPortfolio
-                img(src="images/folder.png" ) 
-                p Portfolio
-            .desktop_icon#iconWelcome
-                img(src="images/folder.png" ) 
-                p Welcome
-            .desktop_icon#iconBooks
-                img(src="images/folder.png" ) 
-                p Bookshelf        
+            .desktop_icon
+                #iconOverview
+                    img(src="images/folder.png" ) 
+                    p Overview
+                #iconAbout
+                    img(src="images/folder.png" ) 
+                    p About
+                #iconPortfolio
+                    img(src="images/folder.png" ) 
+                    p Portfolio
+                #iconWelcome
+                    img(src="images/folder.png" ) 
+                    p Welcome
+                #iconBooks
+                    img(src="images/folder.png" ) 
+                    p Bookshelf        
             
             .window.windowOverview
                 .windowBar
@@ -148,12 +149,12 @@ html
             
             #dock
                 #sort
-                    img(src="images/twitter.png" id="dock1")
-                    img(src="images/reddit.png" id="dock2")
-                    img(src="images/github.png" id="dock3" )
-                    img(src="images/insta.png" id="dock4")
-                    img(src="images/email.png" id="dock5")
-                    img(src="images/Settings.png" id="dock6")
+                    img(src="images/twitter.png" id="dockTwitter")
+                    img(src="images/reddit.png" id="dockReddit")
+                    img(src="images/github.png" id="dockGithub" )
+                    img(src="images/insta.png" id="dockInsta")
+                    img(src="images/email.png" id="dockEmail")
+                    img(src="images/Settings.png" id="dockSettings")
                     
                 #noSort    
                     //span.border
@@ -190,6 +191,7 @@ html
     script.
         //- Overview Window
         //- close window on click x
+        z = 0;
         $('.overviewClose').click(function(){
         $('.windowOverview').css("display", "none")
         });
@@ -201,19 +203,19 @@ html
         //$('.overviewDesc').css("display", "block")
         });
         //- open on overiew doubleclick and remove folder from dock
-        $('#iconOverview').dblclick(function(){
+        $('#iconOverview').click(function(){
         $('.windowOverview').css("display", "block")
         $('.minFolderOverview').css("display", "none")
         
         });
         
-        $('#iconOverview').dblclick(function(){
+        $('#iconOverview').click(function(){
         $('.windowOverview').css({
         "display": "block",
         "position": "absolute",
         "top": "12%",
         "left": "80px",
-        
+        "z-index": ++z
         })
         
         $('.minFolderOverview').css("display", "none")
@@ -238,20 +240,18 @@ html
         //$('.aboutDesc').css("display", "block")
         });
         //- open on overiew doubleclick and remove folder from dock
-        $('#iconAbout').dblclick(function(){
+        $('#iconAbout').click(function(){
         $('.windowAbout').css("display", "block")
         $('.minFolderAbout').css("display", "none")
         
         });
-    
-    script.
-        $('#iconAbout').dblclick(function(){
+        $('#iconAbout').click(function(){
         $('.windowAbout').css({
         "display": "block",
         "position": "absolute",
         "top": "16%",
         "left": "100px",
-        
+        "z-index": ++z
         
         })
         $('.minFolderAbout').css("display", "none")
@@ -271,23 +271,17 @@ html
         $('.settingsMin').click(function(){
         $('.windowSettings').css("display", "none")
         
-        });
-        
-
-              
+        });      
         //- open settings window from dock
-    script.
-        $('#dock6').click(function(){
+        $('#dockSettings').click(function(){
         $('.windowSettings').css({
         "display": "block",
         "position": "absolute",
         "top": "20%",
         "left": "120px",
-        
+        "z-index": ++z
         })
-        
         });
-        
         //Email Window
         //- close window on click x
         $('.emailClose').click(function(){
@@ -296,22 +290,18 @@ html
         //-minimize email click 
         $('.emailMin').click(function(){
         $('.windowEmail').css("display", "none")
-
-        });
-
+        });   
         // open email window from dock
-        $('#dock5').click(function(){
+        $('#dockEmail').click(function(){
         $('.windowEmail').css({
         "display": "block",
         "position": "absolute",
         "top": "24%",
         "left": "140px",
-
+        "z-index": ++z
         })
-
         });
         
-    script.   
         $('.help').click(function(){
         $('.windowHelp').css({
         "display": "block",
@@ -323,7 +313,6 @@ html
         $('.help').css('background-color', '');
         });
         
-    script.
         $(".help").click(function(){
         if ($('.windowHelp').css('display') === "block") {
         $('.help').css('background-color', '#B1B1B1');
@@ -378,28 +367,28 @@ html
      
     //dock bounce 
     script.
-        $( "#dock1" ).click(function() {
-        $( "#dock1" ).effect( "bounce", {times:3}, 1000 );
+        $( "#dockTwitter" ).click(function() {
+        $( "#dockTwitter" ).effect( "bounce", {times:3}, 1000 );
         });
         
-        $( "#dock2" ).click(function() {
-        $( "#dock2" ).effect( "bounce", {times:3}, 1000 );
+        $( "#dockReddit" ).click(function() {
+        $( "#dockReddit" ).effect( "bounce", {times:3}, 1000 );
         });
         
-        $( "#dock3" ).click(function() {
-        $( "#dock3" ).effect( "bounce", {times:3}, 1000 );
+        $( "#dockGithub" ).click(function() {
+        $( "#dockGithub" ).effect( "bounce", {times:3}, 1000 );
         });
         
-        $( "#dock4" ).click(function() {
-        $( "#dock4" ).effect( "bounce", {times:3}, 1000 );
+        $( "#dockInsta" ).click(function() {
+        $( "#dockInsta" ).effect( "bounce", {times:3}, 1000 );
         });
         
-        $( "#dock5" ).click(function() {
-        $( "#dock5" ).effect( "bounce", {times:3}, 1000 );
+        $( "#dockEmail" ).click(function() {
+        $( "#dockEmail" ).effect( "bounce", {times:3}, 1000 );
         });
         //settings
-        $( "#dock6" ).click(function() {
-        $( "#dock6" ).effect( "bounce", {times:3}, 1000 );
+        $( "#dockSettings" ).click(function() {
+        $( "#dockSettings" ).effect( "bounce", {times:3}, 1000 );
         });
     
     
@@ -420,7 +409,6 @@ html
         $('.background5').click(function() {
         $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
         });
-    script.
     
 
         
