@@ -2,6 +2,7 @@ doctype html
 html
     head
         link(href="styles.css" rel="stylesheet")
+        
         script(src='js/javascripts.js')
         link(link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
         link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet')
@@ -9,46 +10,48 @@ html
         link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
-        
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js")
-        
+        script(src="typed.js")
             
     body
+        .loaderWrapper
+            #loading 
+                p.loadText 
+                
+    
         .wrapper
             #topNav
                 ul.left
-                    li.glyphicon.glyphicon-apple
+                    li.miniLogo IA
                     li.bold ianOS
                     li File
                     li Edit
                     li View
-                    li Go
-                    li Window
                     li.help Help
                 ul.right
                     li.glyphicon.glyphicon-signal
-                    li.glyphicon.glyphicon-th
                     li 100%
                     li#time
                     li Ian Anderson
-                    li.glyphicon.glyphicon-search
-                    li.glyphicon.glyphicon-menu-hamburger
+                    
+                    
             
             
             .desktop_icon
-                #iconOverview
+                #iconOverview.icon
                     img(src="images/folder.png" ) 
                     p Overview
-                #iconAbout
+                #iconAbout.icon
                     img(src="images/folder.png" ) 
                     p About
-                #iconPortfolio
+                #iconPortfolio.icon
                     img(src="images/folder.png" ) 
                     p Portfolio
-                #iconWelcome
+                #iconWelcome.icon
                     img(src="images/folder.png" ) 
                     p Welcome
-                #iconBooks
+                #iconBooks.icon
                     img(src="images/folder.png" ) 
                     p Bookshelf        
             
@@ -93,18 +96,9 @@ html
                 .windowIcon
                 span.about 
                     h1 Ian Anderson
-                    h6 Version 4.0
-                    h3 Web Designer
                     p Degree 
                         span Business Management
-                    p Experience
-                        span ~1.5 years
-                    p Languages
-                        span HTML/Jade, CSS/Sass, Javascript/jQuery
-                    p Tools
-                        span Git, Photoshop, Atom/Brackets
-                    p Environments
-                        span Windows, Mac, Linux
+                    
                         
             .window.windowSettings
                 .windowBar
@@ -123,13 +117,7 @@ html
                                 li: button.background4 Silver
                                 li: button.background5 nightLights
                         
-            .windowHelp
-                
-                span.helpText
-                    h4 Need Help?
-                    h3
-                    ul
-                        li: button.helpClose Close
+            
             
             .window.windowEmail
                 .windowBar
@@ -147,33 +135,82 @@ html
                     textarea(type="text" name="message" placeholder="Let's work on something...") 
                     input(type="submit" value="SEND")
             
+            .window.windowWelcome
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign.welcomeClose
+                        li.glyphicon.glyphicon-minus-sign.welcomeMin
+                    ul.tab
+                        li WELCOME  
+                span.welcomeText
+                    h4 Hey there! My name is Ian Anderson. I am a Frontend Web Developer. Welcome to my site!
+                    h5 As of <strong><u>3/6/2016</u></strong> I am accepting clients and seeking full-time employment.
+                    h5 Odds are I would love to work with you, so go ahead, drop me a line.
+                    h5 - Click on the folders to the right to read some more about me or view some of my work.
+                    h5 - Click on the icons at the bottom to view some of my social pages, change the settings of this page, or send me an email.
+                    
+            .window.windowPortfolio
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign.portfolioClose
+                        li.glyphicon.glyphicon-minus-sign.portfolioMin
+                    ul.tab
+                        li PORTFOLIO 
+                .portfolioGrid
+                        
+                    .item    
+                        img(src="images/cate3.png" )
+                        p Personal Webpage
+                    .item    
+                        img(src="images/cate3.png" )
+                        p MaryCateBrown.com
+                    .item    
+                        img(src="images/cate3.png" )
+                        p MaryCateBrown.com
+                    .item    
+                        img(src="images/cate3.png" )
+                        p MaryCateBrown.com
             #dock
                 #sort
-                    img(src="images/twitter.png" id="dockTwitter")
-                    img(src="images/reddit.png" id="dockReddit")
-                    img(src="images/github.png" id="dockGithub" )
-                    img(src="images/insta.png" id="dockInsta")
+                    a(href="https://www.twitter.com" target="_blank")
+                        img(src="images/twitter.png" id="dockTwitter") 
+                        
+                                            
+                    a(href="" target="_blank")
+                        img(src="images/reddit.png" id="dockReddit")
+                    
+                    a(href="" target="_blank")
+                        img(src="images/github.png" id="dockGithub" )
+                    
+                    a(href="" target="_blank") 
+                        img(src="images/insta.png" id="dockInsta")
+                    
+                    
                     img(src="images/email.png" id="dockEmail")
+                    
+                    
                     img(src="images/Settings.png" id="dockSettings")
                     
                 #noSort    
                     //span.border
                     
                     .minFolderOverview: img(src="images/folder.png" )
-                    p.overviewDesc Overview    
+                        
                     .minFolderAbout: img(src="images/folder.png" )
-                    p.aboutDesc About
+                    
+                    .minFolderWelcome: img(src="images/folder.png" )
+                    
+                    .minFolderPortfolio: img(src="images/folder.png" )
+                    
+
                     //img(src="images/trash.png")
                     
     
     //-draggables
     script.
-        $(function() {
-        $( ".desktop_icon" ).draggable({ containment: ".wrapper", scroll: false, stack: ".desktop_icon", distance: 0 });
-        });
         
         $(function() {
-        $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".windowBar", stack: ".window", distance: 0 });
+        $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".window", stack: ".window", distance: 0 });
         });
         
     
@@ -191,7 +228,7 @@ html
     script.
         //- Overview Window
         //- close window on click x
-        z = 0;
+        z = 10;
         $('.overviewClose').click(function(){
         $('.windowOverview').css("display", "none")
         });
@@ -212,9 +249,9 @@ html
         $('#iconOverview').click(function(){
         $('.windowOverview').css({
         "display": "block",
-        "position": "absolute",
-        "top": "12%",
-        "left": "80px",
+        //"position": "absolute",
+        //"top": "10%",
+        //"left": "40px",
         "z-index": ++z
         })
         
@@ -222,7 +259,10 @@ html
         });
         //- open window from dock
         $('.minFolderOverview').click(function(){
-        $('.windowOverview').css("display", "block")
+        $('.windowOverview').css({
+            "display": "block",
+            "z-index": ++z
+        })
         $('.minFolderOverview').css("display", "none")
         });
         
@@ -248,9 +288,9 @@ html
         $('#iconAbout').click(function(){
         $('.windowAbout').css({
         "display": "block",
-        "position": "absolute",
-        "top": "16%",
-        "left": "100px",
+        //"position": "absolute",
+        //"top": "15%",
+        //"left": "60px",
         "z-index": ++z
         
         })
@@ -258,10 +298,87 @@ html
         });
         //- open window from dock
         $('.minFolderAbout').click(function(){
-        $('.windowAbout').css("display", "block")
+        $('.windowAbout').css({
+            "display": "block",
+            "z-index": ++z
+        })
         $('.minFolderAbout').css("display", "none")
         });
         
+        //Welcome Window
+        //- close window on click x
+        $('.welcomeClose').click(function(){
+        $('.windowWelcome').css("display", "none")
+        });
+        //-minimize overview click - and add folder to dock
+        $('.welcomeMin').click(function(){
+        $('.windowWelcome').css("display", "none")
+        $('.minFolderWelcome').css("display", "block")
+        $('#dock').css("min-width", "")
+        //$('.aboutDesc').css("display", "block")
+        });
+        //- open on overiew doubleclick and remove folder from dock
+        $('#iconWelcome').click(function(){
+        $('.windowWelcome').css("display", "block")
+        $('.minFolderWelcome').css("display", "none")
+        
+        });
+        $('#iconWelcome').click(function(){
+        $('.windowWelcome').css({
+        "display": "block",
+        "position": "absolute",
+        "z-index": ++z
+        
+        })
+        $('.minFolderWelcome').css("display", "none")
+        });
+        //- open window from dock
+        $('.minFolderWelcome').click(function(){
+        $('.windowWelcome').css({
+            "display": "block",
+            "z-index": ++z
+        })
+        $('.minFolderWelcome').css("display", "none")
+        });
+        
+        //Welcome Window
+        //- close window on click x
+        $('.portfolioClose').click(function(){
+        $('.windowPortfolio').css("display", "none")
+        });
+        //-minimize overview click - and add folder to dock
+        $('.portfolioMin').click(function(){
+        $('.windowPortfolio').css("display", "none")
+        $('.minFolderPortfolio').css("display", "block")
+        $('#dock').css("min-width", "")
+        //$('.aboutDesc').css("display", "block")
+        });
+        //- open on overiew doubleclick and remove folder from dock
+        $('#iconPortfolio').click(function(){
+        $('.windowPortfolio').css("display", "block")
+        $('.minFolderPortfolio').css("display", "none")
+        
+        });
+        $('#iconPortfolio').click(function(){
+        $('.windowPortfolio').css({
+        "display": "block",
+        "position": "absolute",
+        "z-index": ++z,
+        //"position": "absolute",
+        //"top": "20%",
+        //"left": "80px",
+        
+        })
+        $('.minFolderPortfolio').css("display", "none")
+        });
+        //- open window from dock
+        $('.minFolderPortfolio').click(function(){
+        $('.windowPortfolio').css({
+            "display": "block",
+            "z-index": ++z
+        })
+        $('.minFolderPortfolio').css("display", "none")
+        });
         //- Settings Window
         //- close window on click x
         $('.settingsClose').click(function(){
@@ -277,8 +394,6 @@ html
         $('.windowSettings').css({
         "display": "block",
         "position": "absolute",
-        "top": "20%",
-        "left": "120px",
         "z-index": ++z
         })
         });
@@ -295,9 +410,9 @@ html
         $('#dockEmail').click(function(){
         $('.windowEmail').css({
         "display": "block",
-        "position": "absolute",
-        "top": "24%",
-        "left": "140px",
+        //"position": "absolute",
+        //"top": "25%",
+        //"left": "100px",
         "z-index": ++z
         })
         });
@@ -319,29 +434,6 @@ html
         }  
         });
         
-        //resizable
-    script.
-        $(function() {
-        $( ".windowOverview" ).resizable({
-        minWidth: 550, 
-        minHeight: 350,
-        containment: ".wrapper"
-        });
-        });
-        $(function() {
-        $( ".windowAbout" ).resizable({
-        minWidth: 550, 
-        minHeight: 350,
-        containment: ".wrapper"
-        });
-        });
-        $(function() {
-        $( ".windowSettings" ).resizable({
-        minWidth: 550, 
-        minHeight: 350,
-        containment: ".wrapper"
-        });
-        });
         
         
     
@@ -367,7 +459,7 @@ html
      
     //dock bounce 
     script.
-        $( "#dockTwitter" ).click(function() {
+        $( '#dockTwitter' ).click(function() {
         $( "#dockTwitter" ).effect( "bounce", {times:3}, 1000 );
         });
         
@@ -409,7 +501,36 @@ html
         $('.background5').click(function() {
         $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
         });
-    
+    script.
+        setTimeout(function(){
+         $('.loaderWrapper').remove();
+         }, 2000);
+        
+        $(".wrapper").hide(0).delay(2000).fadeIn(2000)
+        
+        $('a').click(function (e) {
+            e.preventDefault();                   // prevent default anchor behavior
+            var goTo = this.getAttribute("href"); // store anchor href
+
+            // do something while timeOut ticks ... 
+
+            setTimeout(function(){
+                 window.location = goTo;
+            },500);       
+        }); 
+
+        
+    script.    
+        $(function(){
+          $(".loadText").typed({
+            strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Jade <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
+             cursorChar: "_",
+            typeSpeed: -75
+          });
+          });     
+
+
+        
 
         
         

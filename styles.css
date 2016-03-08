@@ -6,7 +6,7 @@ body {
 .wrapper {
   max-width: 100%;
   height: 100vh;
-  background-image: url(images/wallpaper2.jpg);
+  background-image: url(images/wallpaper5.jpg);
   background-size: cover;
 }
 .wrapper #topNav {
@@ -29,7 +29,7 @@ body {
   background: linear-gradient(180deg, #bde0f1, #33a0d6);
   cursor: default;
 }
-.wrapper #topNav li.glyphicon:hover {
+.wrapper #topNav li.glyphicon-apple:hover {
   background: none;
   cursor: default;
 }
@@ -57,11 +57,17 @@ ul.left li {
   margin: 0;
   padding: 0 10px;
   font-size: 16px;
-  font-weight: 500;
 }
-ul.left li.bold {
-  font-weight: 700;
-  font-size: 16px;
+
+li.miniLogo {
+  font-weight: bolder;
+  font-size: 14px;
+  letter-spacing: -2px;
+}
+
+li.bold {
+  font-weight: bolder;
+  font-size: 14px;
 }
 
 ul.right {
@@ -110,6 +116,13 @@ ul.right li {
   min-width: 120px;
   cursor: pointer;
 }
+.desktop_icon .icon {
+  padding: 0 10px 0 10px;
+}
+.desktop_icon .icon:hover {
+  background-color: rgba(245, 245, 245, 0.8);
+  border-radius: 5px;
+}
 .desktop_icon img {
   height: auto;
   width: 72px;
@@ -122,9 +135,12 @@ ul.right li {
   text-shadow: 0px 2px 8px #111111;
 }
 
+.window {
+  border: 0px solid black;
+}
 .window .windowBar {
   height: 40px;
-  background: #e7eaed;
+  background: #d8dde2;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -183,21 +199,16 @@ ul.right li {
 
 #dock {
   position: fixed;
+  display: block;
   bottom: -5px;
   left: 50%;
   transform: translate(-50%);
   height: 90px;
   min-width: 400px;
   max-width: 90%;
-  background-color: rgba(151, 151, 151, 0.9);
+  background-color: rgba(151, 151, 151, 0.7);
   border-radius: 5px;
-}
-#dock img {
-  height: 60px;
-  width: 60px;
-  margin: 10px 5px 5px 5px;
-  float: right;
-  cursor: pointer;
+  z-index: 9999;
 }
 #dock span.border {
   border-left: 2px solid gray;
@@ -213,9 +224,27 @@ ul.right li {
   float: left;
   display: none;
 }
+#dock .minFolderWelcome {
+  float: left;
+  display: none;
+}
+#dock .minFolderPortfolio {
+  display: none;
+  float: left;
+}
 
 #sort {
   float: left;
+}
+#sort a {
+  display: inline-block;
+}
+#sort img {
+  height: 60px;
+  width: 60px;
+  margin: 10px 15px 5px 15px;
+  float: right;
+  cursor: pointer;
 }
 
 #noSort {
@@ -228,9 +257,20 @@ ul.right li {
   display: none;
   font-weight: 700;
 }
+#noSort img {
+  height: 60px;
+  width: 60px;
+  margin: 10px 15px 5px 15px;
+  float: right;
+  cursor: pointer;
+}
 
 .windowAbout {
   display: none;
+  position: absolute;
+  left: 10%;
+  top: 16%;
+  transform: translate(-16%, -10%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -241,7 +281,11 @@ ul.right li {
 
 .windowSettings {
   display: none;
+  left: 16%;
+  top: 26%;
+  position: absolute;
   height: 350px;
+  transform: translate(-26%, -16%);
   width: 550px;
   background-color: whitesmoke;
   border-radius: 5px;
@@ -269,7 +313,7 @@ ul.right li {
   border: 0;
   border-radius: 0px;
   color: rgba(1, 1, 1, 0.7);
-  background: linear-gradient(180deg, #e7eaed, #b1b1b1);
+  background: linear-gradient(180deg, #d8dde2, #b1b1b1);
   cursor: pointer;
 }
 .windowSettings .setting .wallpaper button:hover {
@@ -286,9 +330,10 @@ ul.right li {
 
 .windowOverview {
   display: none;
-  position: relative;
-  top: 12%;
-  left: 80px;
+  position: absolute;
+  left: 7%;
+  top: 11%;
+  transform: translate(-11%, -7%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -297,46 +342,12 @@ ul.right li {
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
 }
 
-.windowHelp {
-  display: none;
-  height: 400px;
-  width: 300px;
-  background-color: rgba(245, 245, 245, 0.8);
-  border-radius: 0px;
-  position: absolute;
-  top: 22px;
-  left: 402px;
-  z-index: 999;
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
-}
-.windowHelp .helpText {
-  text-align: left;
-}
-.windowHelp .helpText button {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  margin: 0;
-  padding: 5px 10px;
-  border: 0;
-  border-radius: 0px;
-  color: rgba(1, 1, 1, 0.7);
-  background: linear-gradient(180deg, #cacaca, #b1b1b1);
-}
-.windowHelp .helpText button:hover {
-  background: #ff6d61;
-}
-.windowHelp .helpText button:active {
-  background: -webkit-linear-gradient(0deg, #cacaca, #b1b1b1);
-  background: -o-linear-gradient(0deg, #cacaca, #b1b1b1);
-  background: linear-gradient(0deg, #cacaca, #b1b1b1);
-}
-.windowHelp .helpText button:focus {
-  outline: 0;
-}
-
 .windowEmail {
   display: none;
+  position: absolute;
+  left: 19%;
+  top: 31%;
+  transform: translate(-31%, -19%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -372,14 +383,102 @@ ul.right li {
 }
 .windowEmail input[type=submit] {
   border: 1px solid #cacaca;
-  border-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   position: absolute;
   bottom: 0;
+  font-weight: 700;
 }
 .windowEmail input[type=submit]:hover {
-  background: linear-gradient(180deg, #a3ffa3, #b1ffb1);
+  background: linear-gradient(0deg, #339966, #b1e5ca);
+  color: rgba(1, 1, 1, 0.6);
+}
+.windowEmail input[name=name] {
+  padding-left: 10px;
+  border-bottom: 1px solid #cacaca;
+}
+.windowEmail input[name=_replyto] {
+  padding-left: 10px;
+}
+.windowEmail textarea[name=message] {
+  padding-left: 10px;
 }
 
 a.desktop_icon:hover {
   text-decoration: none;
+}
+
+.windowWelcome {
+  position: absolute;
+  left: 4%;
+  top: 6%;
+  transform: translate(-6%, -4%);
+  height: 350px;
+  width: 550px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 0;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+}
+.windowWelcome span {
+  font-family: monospace;
+}
+.windowWelcome span h4, .windowWelcome span h5 {
+  margin: 10px;
+}
+
+.windowPortfolio {
+  display: none;
+  position: absolute;
+  left: 13%;
+  top: 21%;
+  transform: translate(-21%, -13%);
+  height: 350px;
+  width: 550px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  z-index: 0;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+}
+.windowPortfolio .portfolioGrid {
+  margin-left: 0;
+  margin-top: 0;
+}
+.windowPortfolio .portfolioGrid .item {
+  position: relative;
+  width: 32.8%;
+  display: inline-block;
+}
+.windowPortfolio .portfolioGrid .item:hover {
+  background: linear-gradient(180deg, #7db1e5, #97c1ea);
+}
+.windowPortfolio .portfolioGrid .item img {
+  height: auto;
+  width: 100%;
+  display: inline-block;
+}
+.windowPortfolio .portfolioGrid .item p {
+  width: 100%;
+  text-align: center;
+  font-weight: 300;
+  color: rgba(1, 1, 1, 0.6);
+}
+
+.loaderWrapper {
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  background: #33333e;
+  z-index: 9999;
+}
+.loaderWrapper #loading {
+  position: relative;
+  font-family: monospace;
+  color: white;
+  margin: 200px;
+  font-size: 16px;
+}
+.loaderWrapper #loading .loadText {
+  display: inline;
 }
