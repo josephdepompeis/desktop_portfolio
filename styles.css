@@ -136,7 +136,8 @@ ul.right li {
 }
 
 .window {
-  border: 0px solid black;
+  border: 1px solid black;
+  position: absolute;
 }
 .window .windowBar {
   height: 40px;
@@ -169,7 +170,7 @@ ul.right li {
 }
 .window .glyphicon-minus-sign {
   color: #cacaca;
-  margin: 10px 2px 0 2px;
+  margin: 10px 2px 0 10px;
 }
 .window .glyphicon-minus-sign:hover {
   color: #ffc661;
@@ -270,7 +271,6 @@ ul.right li {
   position: absolute;
   left: 10%;
   top: 16%;
-  transform: translate(-16%, -10%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -285,7 +285,6 @@ ul.right li {
   top: 26%;
   position: absolute;
   height: 350px;
-  transform: translate(-26%, -16%);
   width: 550px;
   background-color: whitesmoke;
   border-radius: 5px;
@@ -333,7 +332,6 @@ ul.right li {
   position: absolute;
   left: 7%;
   top: 11%;
-  transform: translate(-11%, -7%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -347,7 +345,6 @@ ul.right li {
   position: absolute;
   left: 19%;
   top: 31%;
-  transform: translate(-31%, -19%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -412,7 +409,6 @@ a.desktop_icon:hover {
   position: absolute;
   left: 4%;
   top: 6%;
-  transform: translate(-6%, -4%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;
@@ -432,7 +428,6 @@ a.desktop_icon:hover {
   position: absolute;
   left: 13%;
   top: 21%;
-  transform: translate(-21%, -13%);
   height: 350px;
   width: 550px;
   background-color: whitesmoke;

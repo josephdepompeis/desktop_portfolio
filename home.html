@@ -190,7 +190,11 @@
   </body>
   <script>
     $(function() {
-    $( ".window" ).draggable({ containment: ".wrapper", scroll: false, handle: ".window", stack: ".window", distance: 0 });
+    $( ".window" ).draggable({ 
+        containment: ".wrapper", 
+        scroll: false, stack: ".window", 
+        distance: 0 
+    })
     });
     
     
@@ -200,15 +204,13 @@
     $('#sort').sortable(
     {
     containment: "parent",
-    
-    
-    });
+    })
     });
   </script>
   <script>
     //- Overview Window
     //- close window on click x
-    z = 10;
+    z = 0;
     $('.overviewClose').click(function(){
     $('.windowOverview').css("display", "none")
     });
