@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <link href="styles.css" rel="stylesheet">
     <script src="js/javascripts.js"></script>
     <link link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
@@ -8,14 +9,14 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-    <script src="typed.js"></script>
+    <script src="js/typed.js"></script>
   </head>
   <body>
     <div class="loaderWrapper">
       <div id="loading">
         <p class="loadText"></p>
+        <p class="loadStatus"></p>
       </div>
     </div>
     <div class="wrapper">
@@ -42,7 +43,7 @@
         <div id="iconAbout" class="icon"><img src="images/folder.png">
           <p>About</p>
         </div>
-        <div id="iconPortfolio" class="icon"><img src="images/folder.png">
+        <div id="iconPortfolio" class="icon"><img src="images/folderFill.png">
           <p>Portfolio</p>
         </div>
         <div id="iconWelcome" class="icon"><img src="images/folder.png">
@@ -161,10 +162,10 @@
           </ul>
         </div>
         <div class="portfolioGrid">
-          <div class="item">   <img src="images/cate3.png">
+          <div id="itemForest" class="item">   <img src="images/cate3.png">
             <p>Personal Webpage</p>
           </div>
-          <div class="item">   <img src="images/cate3.png">
+          <div id="itemCate" class="item">   <img src="images/cate3.png">
             <p>MaryCateBrown.com</p>
           </div>
           <div class="item">   <img src="images/cate3.png">
@@ -175,16 +176,51 @@
           </div>
         </div>
       </div>
+      <div class="window windowGallery">
+        <div class="windowBar">
+          <ul class="button">
+            <li class="glyphicon glyphicon-remove-sign galleryClose"></li>
+            <li class="glyphicon glyphicon-minus-sign galleryMin"></li>
+          </ul>
+          <ul class="tab">
+            <li>PORTFOLIO GALLERY </li>
+          </ul>
+        </div>
+        <div class="galleryWrapper">
+          <div id="forest" class="galleryItem">   
+            <div class="galleryImage"><img src="images/forest_case.png"></div>
+            <div class="galleryText">
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site</p></a>
+            </div>
+          </div>
+          <div id="cate" class="galleryItem">
+            <div class="galleryImage"><img src="images/cate_case1.png"></div>
+            <div class="galleryText">
+              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div id="dock">
         <div id="sort"><a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png" id="dockTwitter"></a><a href="" target="_blank"><img src="images/reddit.png" id="dockReddit"></a><a href="" target="_blank"><img src="images/github.png" id="dockGithub"></a><a href="" target="_blank"><img src="images/insta.png" id="dockInsta"></a><img src="images/email.png" id="dockEmail"><img src="images/Settings.png" id="dockSettings"></div>
-        <div id="noSort">   
-          <!--span.border-->
-          <div class="minFolderOverview"><img src="images/folder.png"></div>
-          <div class="minFolderAbout"><img src="images/folder.png"></div>
-          <div class="minFolderWelcome"><img src="images/folder.png"></div>
-          <div class="minFolderPortfolio"><img src="images/folder.png"></div>
-          <!--img(src="images/trash.png")-->
-        </div>
+        <!--#noSort    
+        //span.border
+        
+        //.minFolderOverview: img(src="images/folder.png" )
+        
+        //.minFolderAbout: img(src="images/folder.png" )
+        
+        //.minFolderWelcome: img(src="images/folder.png" )
+        
+        //.minFolderPortfolio: img(src="images/folder.png" )
+        
+        
+        //img(src="images/trash.png")
+        
+        
+        -->
       </div>
     </div>
   </body>
@@ -201,7 +237,7 @@
   </script>
   <script>
     $(document).ready(function(){
-    $('#sort').sortable(
+    $('#dock').children().sortable(
     {
     containment: "parent",
     })
@@ -217,7 +253,7 @@
     //-minimize overview click - and add folder to dock
     $('.overviewMin').click(function(){
     $('.windowOverview').css("display", "none")
-    $('.minFolderOverview').css("display", "block")
+    $('.minFolderOverview').css("display", "inline-block")
     $('#dock').css("min-width", "")
     //$('.overviewDesc').css("display", "block")
     });
@@ -257,7 +293,7 @@
     //-minimize overview click - and add folder to dock
     $('.aboutMin').click(function(){
     $('.windowAbout').css("display", "none")
-    $('.minFolderAbout').css("display", "block")
+    $('.minFolderAbout').css("display", "inline-block")
     $('#dock').css("min-width", "")
     //$('.aboutDesc').css("display", "block")
     });
@@ -295,7 +331,7 @@
     //-minimize overview click - and add folder to dock
     $('.welcomeMin').click(function(){
     $('.windowWelcome').css("display", "none")
-    $('.minFolderWelcome').css("display", "block")
+    $('.minFolderWelcome').css("display", "inline-block")
     $('#dock').css("min-width", "")
     //$('.aboutDesc').css("display", "block")
     });
@@ -331,7 +367,7 @@
     //-minimize overview click - and add folder to dock
     $('.portfolioMin').click(function(){
     $('.windowPortfolio').css("display", "none")
-    $('.minFolderPortfolio').css("display", "block")
+    $('.minFolderPortfolio').css("display", "inline-block")
     $('#dock').css("min-width", "")
     //$('.aboutDesc').css("display", "block")
     });
@@ -399,22 +435,24 @@
     })
     });
     
-    $('.help').click(function(){
-    $('.windowHelp').css({
+    //portfolio display
+    $('#itemCate').click(function(){
+    $('.windowGallery, #cate').css({
     "display": "block",
-    "position": "absolute"
+    "position": "absolute",
+    "z-index": ++z
     })
+    $("#forest").css('display', 'none')
     });
-    $('.helpClose').click(function(){
-    $('.windowHelp').css("display", "none")
-    $('.help').css('background-color', '');
+    $('#itemForest').click(function(){
+    $('.windowGallery, #forest').css({
+    "display": "block",
+    "position": "absolute",
+    "z-index": ++z
+    })
+    $("#cate").css('display', 'none')
     });
     
-    $(".help").click(function(){
-    if ($('.windowHelp').css('display') === "block") {
-    $('.help').css('background-color', '#B1B1B1');
-    }  
-    });
     
     
     
@@ -491,9 +529,9 @@
   <script>
     setTimeout(function(){
      $('.loaderWrapper').remove();
-     }, 2000);
-     
-    $(".wrapper").hide(0).delay(2000).fadeIn(2000)
+         }, 2000);
+         
+    $(".wrapper").hide(0).delay(2000).fadeIn(1000)
     
     $('a').click(function (e) {
         e.preventDefault();                   // prevent default anchor behavior
@@ -514,7 +552,8 @@
         strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Jade <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
          cursorChar: "_",
         typeSpeed: -75
-      });
+      })
+      
       });     
       
       

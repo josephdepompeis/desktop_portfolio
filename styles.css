@@ -18,20 +18,8 @@ body {
   box-shadow: 0px 0px 22px 0px #888888;
   z-index: 999;
 }
-.wrapper #topNav .help {
-  background-color: none;
-  cursor: default;
-}
 .wrapper #topNav ul.left li {
   position: relative;
-}
-.wrapper #topNav ul.left li:hover {
-  background: linear-gradient(180deg, #bde0f1, #33a0d6);
-  cursor: default;
-}
-.wrapper #topNav li.glyphicon-apple:hover {
-  background: none;
-  cursor: default;
 }
 
 ul {
@@ -85,25 +73,25 @@ ul.right li {
 #iconOverview {
   position: absolute;
   right: 20px;
-  top: 60px;
+  top: 160px;
 }
 
 #iconAbout {
   position: absolute;
   right: 20px;
-  top: 160px;
+  top: 260px;
 }
 
 #iconPortfolio {
   position: absolute;
   right: 20px;
-  top: 260px;
+  top: 360px;
 }
 
 #iconWelcome {
   position: absolute;
   right: 20px;
-  top: 360px;
+  top: 60px;
 }
 
 #iconBooks {
@@ -113,11 +101,11 @@ ul.right li {
 }
 
 .desktop_icon {
-  min-width: 120px;
   cursor: pointer;
 }
 .desktop_icon .icon {
-  padding: 0 10px 0 10px;
+  padding: 0 20px;
+  margin: 40px;
 }
 .desktop_icon .icon:hover {
   background-color: rgba(245, 245, 245, 0.8);
@@ -201,11 +189,10 @@ ul.right li {
 #dock {
   position: fixed;
   display: block;
-  bottom: -5px;
+  bottom: 0px;
   left: 50%;
   transform: translate(-50%);
-  height: 90px;
-  min-width: 400px;
+  height: 100px;
   max-width: 90%;
   background-color: rgba(151, 151, 151, 0.7);
   border-radius: 5px;
@@ -218,58 +205,52 @@ ul.right li {
   bottom: 20px;
 }
 #dock .minFolderOverview {
-  float: left;
   display: none;
 }
 #dock .minFolderAbout {
-  float: left;
   display: none;
 }
 #dock .minFolderWelcome {
-  float: left;
   display: none;
 }
 #dock .minFolderPortfolio {
   display: none;
-  float: left;
 }
 
 #sort {
-  float: left;
-}
-#sort a {
   display: inline-block;
 }
 #sort img {
   height: 60px;
   width: 60px;
-  margin: 10px 15px 5px 15px;
-  float: right;
+  margin: 15px 20px;
+  float: left;
   cursor: pointer;
+}
+#sort img:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
 #noSort {
   float: right;
-}
-#noSort p {
-  position: relative;
-  top: -10px;
-  left: 4px;
-  display: none;
-  font-weight: 700;
+  display: inline-block;
 }
 #noSort img {
-  height: 60px;
-  width: 60px;
-  margin: 10px 15px 5px 15px;
-  float: right;
+  height: 50px;
+  width: 50px;
+  margin: 5px 10px;
   cursor: pointer;
+}
+#noSort img:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
 }
 
 .windowAbout {
   display: none;
   position: absolute;
-  left: 10%;
+  left: 4%;
   top: 16%;
   height: 350px;
   width: 550px;
@@ -281,7 +262,7 @@ ul.right li {
 
 .windowSettings {
   display: none;
-  left: 16%;
+  left: 6%;
   top: 26%;
   position: absolute;
   height: 350px;
@@ -330,7 +311,7 @@ ul.right li {
 .windowOverview {
   display: none;
   position: absolute;
-  left: 7%;
+  left: 3%;
   top: 11%;
   height: 350px;
   width: 550px;
@@ -343,7 +324,7 @@ ul.right li {
 .windowEmail {
   display: none;
   position: absolute;
-  left: 19%;
+  left: 7%;
   top: 31%;
   height: 350px;
   width: 550px;
@@ -384,10 +365,11 @@ ul.right li {
   border-bottom-right-radius: 5px;
   position: absolute;
   bottom: 0;
+  left: 0;
   font-weight: 700;
 }
 .windowEmail input[type=submit]:hover {
-  background: linear-gradient(0deg, #339966, #b1e5ca);
+  background: linear-gradient(0deg, #39b54a, #b1e5ca);
   color: rgba(1, 1, 1, 0.6);
 }
 .windowEmail input[name=name] {
@@ -407,7 +389,7 @@ a.desktop_icon:hover {
 
 .windowWelcome {
   position: absolute;
-  left: 4%;
+  left: 2%;
   top: 6%;
   height: 350px;
   width: 550px;
@@ -426,7 +408,7 @@ a.desktop_icon:hover {
 .windowPortfolio {
   display: none;
   position: absolute;
-  left: 13%;
+  left: 5%;
   top: 21%;
   height: 350px;
   width: 550px;
@@ -441,7 +423,7 @@ a.desktop_icon:hover {
 }
 .windowPortfolio .portfolioGrid .item {
   position: relative;
-  width: 32.8%;
+  width: 32%;
   display: inline-block;
 }
 .windowPortfolio .portfolioGrid .item:hover {
@@ -457,6 +439,35 @@ a.desktop_icon:hover {
   text-align: center;
   font-weight: 300;
   color: rgba(1, 1, 1, 0.6);
+}
+
+.windowGallery {
+  height: 750px;
+  width: 750px;
+  position: absolute;
+  border-radius: 5px;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.2);
+  left: 50%;
+  top: 10%;
+  background-color: whitesmoke;
+  display: none;
+}
+.windowGallery .galleryWrapper .galleryItem {
+  display: inline-block;
+}
+.windowGallery .galleryWrapper .galleryItem .galleryImage img {
+  width: 90%;
+  margin: 5%;
+}
+.windowGallery .galleryWrapper .galleryItem .galleryText p {
+  width: 90%;
+  margin: 0 5%;
+}
+.windowGallery .galleryWrapper #forest {
+  display: none;
+}
+.windowGallery .galleryWrapper #cate {
+  display: none;
 }
 
 .loaderWrapper {

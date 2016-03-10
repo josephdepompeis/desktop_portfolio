@@ -1,6 +1,7 @@
 doctype html
 html
     head
+        meta(charset="utf-8")
         link(href="styles.css" rel="stylesheet")
         
         script(src='js/javascripts.js')
@@ -10,14 +11,16 @@ html
         link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
-        script(src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js")
+        
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js")
-        script(src="typed.js")
-            
+        script(src="js/typed.js")
+        
+        
     body
         .loaderWrapper
             #loading 
                 p.loadText 
+                p.loadStatus 
                 
     
         .wrapper
@@ -46,7 +49,7 @@ html
                     img(src="images/folder.png" ) 
                     p About
                 #iconPortfolio.icon
-                    img(src="images/folder.png" ) 
+                    img(src="images/folderFill.png" ) 
                     p Portfolio
                 #iconWelcome.icon
                     img(src="images/folder.png" ) 
@@ -158,10 +161,10 @@ html
                         li PORTFOLIO 
                 .portfolioGrid
                         
-                    .item    
+                    .item#itemForest    
                         img(src="images/cate3.png" )
                         p Personal Webpage
-                    .item    
+                    .item#itemCate    
                         img(src="images/cate3.png" )
                         p MaryCateBrown.com
                     .item    
@@ -170,6 +173,31 @@ html
                     .item    
                         img(src="images/cate3.png" )
                         p MaryCateBrown.com
+            .window.windowGallery
+                .windowBar
+                    ul.button
+                        li.glyphicon.glyphicon-remove-sign.galleryClose
+                        li.glyphicon.glyphicon-minus-sign.galleryMin
+                    ul.tab
+                        li PORTFOLIO GALLERY 
+                .galleryWrapper
+                    .galleryItem#forest    
+                        .galleryImage
+                            img(src="images/forest_case.png" )
+                        .galleryText
+                            p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
+                            a(href="")
+                                p View Site
+                                
+                    .galleryItem#cate
+                        .galleryImage 
+                            img(src="images/cate_case1.png" )
+                        .galleryText
+                            p  tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
+                            a(href="")
+                                p View Site
+                                
+                    
             #dock
                 #sort
                     a(href="https://www.twitter.com" target="_blank")
@@ -191,16 +219,16 @@ html
                     
                     img(src="images/Settings.png" id="dockSettings")
                     
-                #noSort    
+                //#noSort    
                     //span.border
                     
-                    .minFolderOverview: img(src="images/folder.png" )
+                    //.minFolderOverview: img(src="images/folder.png" )
                         
-                    .minFolderAbout: img(src="images/folder.png" )
+                    //.minFolderAbout: img(src="images/folder.png" )
                     
-                    .minFolderWelcome: img(src="images/folder.png" )
+                    //.minFolderWelcome: img(src="images/folder.png" )
                     
-                    .minFolderPortfolio: img(src="images/folder.png" )
+                    //.minFolderPortfolio: img(src="images/folder.png" )
                     
 
                     //img(src="images/trash.png")
@@ -221,7 +249,7 @@ html
     //-sortables
     script.
         $(document).ready(function(){
-        $('#sort').sortable(
+        $('#dock').children().sortable(
         {
         containment: "parent",
         })
@@ -237,7 +265,7 @@ html
         //-minimize overview click - and add folder to dock
         $('.overviewMin').click(function(){
         $('.windowOverview').css("display", "none")
-        $('.minFolderOverview').css("display", "block")
+        $('.minFolderOverview').css("display", "inline-block")
         $('#dock').css("min-width", "")
         //$('.overviewDesc').css("display", "block")
         });
@@ -277,7 +305,7 @@ html
         //-minimize overview click - and add folder to dock
         $('.aboutMin').click(function(){
         $('.windowAbout').css("display", "none")
-        $('.minFolderAbout').css("display", "block")
+        $('.minFolderAbout').css("display", "inline-block")
         $('#dock').css("min-width", "")
         //$('.aboutDesc').css("display", "block")
         });
@@ -315,7 +343,7 @@ html
         //-minimize overview click - and add folder to dock
         $('.welcomeMin').click(function(){
         $('.windowWelcome').css("display", "none")
-        $('.minFolderWelcome').css("display", "block")
+        $('.minFolderWelcome').css("display", "inline-block")
         $('#dock').css("min-width", "")
         //$('.aboutDesc').css("display", "block")
         });
@@ -351,7 +379,7 @@ html
         //-minimize overview click - and add folder to dock
         $('.portfolioMin').click(function(){
         $('.windowPortfolio').css("display", "none")
-        $('.minFolderPortfolio').css("display", "block")
+        $('.minFolderPortfolio').css("display", "inline-block")
         $('#dock').css("min-width", "")
         //$('.aboutDesc').css("display", "block")
         });
@@ -419,22 +447,24 @@ html
         })
         });
         
-        $('.help').click(function(){
-        $('.windowHelp').css({
+        //portfolio display
+        $('#itemCate').click(function(){
+        $('.windowGallery, #cate').css({
         "display": "block",
-        "position": "absolute"
+        "position": "absolute",
+        "z-index": ++z
         })
+        $("#forest").css('display', 'none')
         });
-        $('.helpClose').click(function(){
-        $('.windowHelp').css("display", "none")
-        $('.help').css('background-color', '');
+        $('#itemForest').click(function(){
+        $('.windowGallery, #forest').css({
+        "display": "block",
+        "position": "absolute",
+        "z-index": ++z
+        })
+        $("#cate").css('display', 'none')
         });
         
-        $(".help").click(function(){
-        if ($('.windowHelp').css('display') === "block") {
-        $('.help').css('background-color', '#B1B1B1');
-        }  
-        });
         
         
         
@@ -506,9 +536,9 @@ html
     script.
         setTimeout(function(){
          $('.loaderWrapper').remove();
-         }, 2000);
+             }, 2000);
         
-        $(".wrapper").hide(0).delay(2000).fadeIn(2000)
+        $(".wrapper").hide(0).delay(2000).fadeIn(1000)
         
         $('a').click(function (e) {
             e.preventDefault();                   // prevent default anchor behavior
@@ -528,11 +558,12 @@ html
             strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Jade <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
              cursorChar: "_",
             typeSpeed: -75
-          });
+          })
+          
           });     
 
 
-        
+    
 
         
         
