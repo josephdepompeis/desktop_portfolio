@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
-    <script src="js/javascripts.js"></script>
     <link link href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -49,9 +49,6 @@
         <div id="iconWelcome" class="icon"><img src="images/folder.png">
           <p>Welcome</p>
         </div>
-        <div id="iconBooks" class="icon"><img src="images/folder.png">
-          <p>Bookshelf        </p>
-        </div>
       </div>
       <div class="window windowOverview">
         <div class="windowBar">
@@ -69,8 +66,8 @@
           <h3>Frontend Web Developer</h3>
           <p>Degree <span> Business Management B.S.</span></p>
           <p>Experience<span>~1.5 years</span></p>
-          <p>Languages<span>HTML/Jade, CSS/Sass, Javascript/jQuery</span></p>
-          <p>Tools<span>Git, Photoshop, Atom/Brackets</span></p>
+          <p>Languages<span>HTML/Jade, CSS/Sass, Javascript/jQuery </span></p>
+          <p>Tools<span>Git, Photoshop, Atom/Brackets, Emmet</span></p>
           <p>Environments<span>Windows, Mac, Linux</span></p></span>
       </div>
       <div class="window windowAbout">
@@ -113,7 +110,7 @@
                 <button class="background4">Silver</button>
               </li>
               <li>
-                <button class="background5">nightLights</button>
+                <button class="background5">Night Light</button>
               </li>
             </ul>
           </div></span>
@@ -146,7 +143,7 @@
           </ul>
         </div><span class="welcomeText">
           <h4>Hey there! My name is Ian Anderson. I am a Frontend Web Developer. Welcome to my site!</h4>
-          <h5>As of <strong><u>3/6/2016</u></strong> I am accepting clients and seeking full-time employment.</h5>
+          <h5>As of <strong><u>3/6/2016</u></strong> I am accepting clients and trying to join your team.</h5>
           <h5>Odds are I would love to work with you, so go ahead, drop me a line.</h5>
           <h5>- Click on the folders to the right to read some more about me or view some of my work.</h5>
           <h5>- Click on the icons at the bottom to view some of my social pages, change the settings of this page, or send me an email.</h5></span>
@@ -162,17 +159,26 @@
           </ul>
         </div>
         <div class="portfolioGrid">
-          <div id="itemForest" class="item">   <img src="images/cate3.png">
-            <p>Personal Webpage</p>
+          <div id="itemPersonal" class="item">   <img src="images/Personal.png">
+            <p>Personal Webpage   </p>
           </div>
-          <div id="itemCate" class="item">   <img src="images/cate3.png">
+          <div id="itemForest" class="item">   <img src="images/forest_case.png">
+            <p>HTML Template</p>
+          </div>
+          <div id="itemCate" class="item">   <img src="images/cate_case1.png">
             <p>MaryCateBrown.com</p>
           </div>
-          <div class="item">   <img src="images/cate3.png">
-            <p>MaryCateBrown.com</p>
+          <div id="itemEWF" class="item">   <img src="images/ewf_case.png">
+            <p>EmbryWoodsFarms.com</p>
           </div>
-          <div class="item">   <img src="images/cate3.png">
-            <p>MaryCateBrown.com</p>
+          <div id="itemTaco" class="item">   <img src="images/taco_case1.png">
+            <p>Restuarant Mockup</p>
+          </div>
+          <div id="itemNews" class="item">  <img src="images/case_study_news.png">
+            <p>News Site Theme</p>
+          </div>
+          <div id="itemPrompt" class="item"><img src="images/case_prompt.png">
+            <p>Random Design Prompt Generator</p>
           </div>
         </div>
       </div>
@@ -187,6 +193,13 @@
           </ul>
         </div>
         <div class="galleryWrapper">
+          <div id="personal" class="galleryItem">  
+            <div class="galleryImage"><img src="images/Personal.png"></div>
+            <div class="galleryText">
+              <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site</p></a>
+            </div>
+          </div>
           <div id="forest" class="galleryItem">   
             <div class="galleryImage"><img src="images/forest_case.png"></div>
             <div class="galleryText">
@@ -201,370 +214,40 @@
                 <p>View Site</p></a>
             </div>
           </div>
+          <div id="ewf" class="galleryItem">
+            <div class="galleryImage"><img src="images/ewf_case.png"></div>
+            <div class="galleryText">
+              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site     </p></a>
+            </div>
+          </div>
+          <div id="taco" class="galleryItem">
+            <div class="galleryImage"><img src="images/taco_case1.png"></div>
+            <div class="galleryText">
+              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site </p></a>
+            </div>
+          </div>
+          <div id="news" class="galleryItem">
+            <div class="galleryImage"><img src="images/case_study_news.png"></div>
+            <div class="galleryText">
+              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site            </p></a>
+            </div>
+          </div>
+          <div id="prompts" class="galleryItem">
+            <div class="galleryImage"><img src="images/case_prompt.png"></div>
+            <div class="galleryText">
+              <p> tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.</p><a href="">
+                <p>View Site      </p></a>
+            </div>
+          </div>
         </div>
       </div>
       <div id="dock">
-        <div id="sort"><a href="https://www.twitter.com" target="_blank"><img src="images/twitter.png" id="dockTwitter"></a><a href="" target="_blank"><img src="images/reddit.png" id="dockReddit"></a><a href="" target="_blank"><img src="images/github.png" id="dockGithub"></a><a href="" target="_blank"><img src="images/insta.png" id="dockInsta"></a><img src="images/email.png" id="dockEmail"><img src="images/Settings.png" id="dockSettings"></div>
-        <!--#noSort    
-        //span.border
-        
-        //.minFolderOverview: img(src="images/folder.png" )
-        
-        //.minFolderAbout: img(src="images/folder.png" )
-        
-        //.minFolderWelcome: img(src="images/folder.png" )
-        
-        //.minFolderPortfolio: img(src="images/folder.png" )
-        
-        
-        //img(src="images/trash.png")
-        
-        
-        -->
+        <div id="sort"><a href="https://twitter.com/ian_a_anderson" target="_blank"><img src="images/twitter.png" id="dockTwitter"></a><a href="https://www.reddit.com/user/ianaanderson/" target="_blank"><img src="images/reddit.png" id="dockReddit"></a><a href="https://github.com/ianderso222" target="_blank"><img src="images/github.png" id="dockGithub"></a><a href="https://www.instagram.com/ianderso222/" target="_blank"><img src="images/insta.png" id="dockInsta"></a><img src="images/email.png" id="dockEmail"><img src="images/Settings.png" id="dockSettings"></div>
       </div>
     </div>
   </body>
-  <script>
-    $(function() {
-    $( ".window" ).draggable({ 
-        containment: ".wrapper", 
-        scroll: false, stack: ".window", 
-        distance: 0 
-    })
-    });
-    
-    
-  </script>
-  <script>
-    $(document).ready(function(){
-    $('#dock').children().sortable(
-    {
-    containment: "parent",
-    })
-    });
-  </script>
-  <script>
-    //- Overview Window
-    //- close window on click x
-    z = 0;
-    $('.overviewClose').click(function(){
-    $('.windowOverview').css("display", "none")
-    });
-    //-minimize overview click - and add folder to dock
-    $('.overviewMin').click(function(){
-    $('.windowOverview').css("display", "none")
-    $('.minFolderOverview').css("display", "inline-block")
-    $('#dock').css("min-width", "")
-    //$('.overviewDesc').css("display", "block")
-    });
-    //- open on overiew doubleclick and remove folder from dock
-    $('#iconOverview').click(function(){
-    $('.windowOverview').css("display", "block")
-    $('.minFolderOverview').css("display", "none")
-    
-    });
-    
-    $('#iconOverview').click(function(){
-    $('.windowOverview').css({
-    "display": "block",
-    //"position": "absolute",
-    //"top": "10%",
-    //"left": "40px",
-    "z-index": ++z
-    })
-    
-    $('.minFolderOverview').css("display", "none")
-    });
-    //- open window from dock
-    $('.minFolderOverview').click(function(){
-    $('.windowOverview').css({
-        "display": "block",
-        "z-index": ++z
-    })
-    $('.minFolderOverview').css("display", "none")
-    });
-    
-    
-    //About Window
-    //- close window on click x
-    $('.aboutClose').click(function(){
-    $('.windowAbout').css("display", "none")
-    });
-    //-minimize overview click - and add folder to dock
-    $('.aboutMin').click(function(){
-    $('.windowAbout').css("display", "none")
-    $('.minFolderAbout').css("display", "inline-block")
-    $('#dock').css("min-width", "")
-    //$('.aboutDesc').css("display", "block")
-    });
-    //- open on overiew doubleclick and remove folder from dock
-    $('#iconAbout').click(function(){
-    $('.windowAbout').css("display", "block")
-    $('.minFolderAbout').css("display", "none")
-    
-    });
-    $('#iconAbout').click(function(){
-    $('.windowAbout').css({
-    "display": "block",
-    //"position": "absolute",
-    //"top": "15%",
-    //"left": "60px",
-    "z-index": ++z
-    
-    })
-    $('.minFolderAbout').css("display", "none")
-    });
-    //- open window from dock
-    $('.minFolderAbout').click(function(){
-    $('.windowAbout').css({
-        "display": "block",
-        "z-index": ++z
-    })
-    $('.minFolderAbout').css("display", "none")
-    });
-    
-    //Welcome Window
-    //- close window on click x
-    $('.welcomeClose').click(function(){
-    $('.windowWelcome').css("display", "none")
-    });
-    //-minimize overview click - and add folder to dock
-    $('.welcomeMin').click(function(){
-    $('.windowWelcome').css("display", "none")
-    $('.minFolderWelcome').css("display", "inline-block")
-    $('#dock').css("min-width", "")
-    //$('.aboutDesc').css("display", "block")
-    });
-    //- open on overiew doubleclick and remove folder from dock
-    $('#iconWelcome').click(function(){
-    $('.windowWelcome').css("display", "block")
-    $('.minFolderWelcome').css("display", "none")
-    
-    });
-    $('#iconWelcome').click(function(){
-    $('.windowWelcome').css({
-    "display": "block",
-    "position": "absolute",
-    "z-index": ++z
-    
-    })
-    $('.minFolderWelcome').css("display", "none")
-    });
-    //- open window from dock
-    $('.minFolderWelcome').click(function(){
-    $('.windowWelcome').css({
-        "display": "block",
-        "z-index": ++z
-    })
-    $('.minFolderWelcome').css("display", "none")
-    });
-    
-    //Welcome Window
-    //- close window on click x
-    $('.portfolioClose').click(function(){
-    $('.windowPortfolio').css("display", "none")
-    });
-    //-minimize overview click - and add folder to dock
-    $('.portfolioMin').click(function(){
-    $('.windowPortfolio').css("display", "none")
-    $('.minFolderPortfolio').css("display", "inline-block")
-    $('#dock').css("min-width", "")
-    //$('.aboutDesc').css("display", "block")
-    });
-    //- open on overiew doubleclick and remove folder from dock
-    $('#iconPortfolio').click(function(){
-    $('.windowPortfolio').css("display", "block")
-    $('.minFolderPortfolio').css("display", "none")
-    
-    });
-    $('#iconPortfolio').click(function(){
-    $('.windowPortfolio').css({
-    "display": "block",
-    "position": "absolute",
-    "z-index": ++z,
-    //"position": "absolute",
-    //"top": "20%",
-    //"left": "80px",
-    
-    })
-    $('.minFolderPortfolio').css("display", "none")
-    });
-    //- open window from dock
-    $('.minFolderPortfolio').click(function(){
-    $('.windowPortfolio').css({
-        "display": "block",
-        "z-index": ++z
-    })
-    $('.minFolderPortfolio').css("display", "none")
-    });
-    //- Settings Window
-    //- close window on click x
-    $('.settingsClose').click(function(){
-    $('.windowSettings').css("display", "none")
-    });
-    //-minimize settings click 
-    $('.settingsMin').click(function(){
-    $('.windowSettings').css("display", "none")
-    
-    });      
-    //- open settings window from dock
-    $('#dockSettings').click(function(){
-    $('.windowSettings').css({
-    "display": "block",
-    "position": "absolute",
-    "z-index": ++z
-    })
-    });
-    //Email Window
-    //- close window on click x
-    $('.emailClose').click(function(){
-    $('.windowEmail').css("display", "none")
-    });
-    //-minimize email click 
-    $('.emailMin').click(function(){
-    $('.windowEmail').css("display", "none")
-    });   
-    // open email window from dock
-    $('#dockEmail').click(function(){
-    $('.windowEmail').css({
-    "display": "block",
-    //"position": "absolute",
-    //"top": "25%",
-    //"left": "100px",
-    "z-index": ++z
-    })
-    });
-    
-    //portfolio display
-    $('#itemCate').click(function(){
-    $('.windowGallery, #cate').css({
-    "display": "block",
-    "position": "absolute",
-    "z-index": ++z
-    })
-    $("#forest").css('display', 'none')
-    });
-    $('#itemForest').click(function(){
-    $('.windowGallery, #forest').css({
-    "display": "block",
-    "position": "absolute",
-    "z-index": ++z
-    })
-    $("#cate").css('display', 'none')
-    });
-    
-    
-    
-    
-    
-  </script>
-  <!--moment js time-->
-  <script>
-    var datetime = null,
-            date = null;
-            
-    var update = function () {
-    date = moment(new Date())
-    datetime.html(date.format('dddd h:mm A'));
-    };
-    
-    $(document).ready(function(){
-    datetime = $('#time')
-    update();
-    setInterval(update, 1000);
-    });
-    
-  </script>
-  <script>
-    !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
-    
-    
-  </script>
-  <!--dock bounce -->
-  <script>
-    $( '#dockTwitter' ).click(function() {
-    $( "#dockTwitter" ).effect( "bounce", {times:3}, 1000 );
-    });
-    
-    $( "#dockReddit" ).click(function() {
-    $( "#dockReddit" ).effect( "bounce", {times:3}, 1000 );
-    });
-    
-    $( "#dockGithub" ).click(function() {
-    $( "#dockGithub" ).effect( "bounce", {times:3}, 1000 );
-    });
-    
-    $( "#dockInsta" ).click(function() {
-    $( "#dockInsta" ).effect( "bounce", {times:3}, 1000 );
-    });
-    
-    $( "#dockEmail" ).click(function() {
-    $( "#dockEmail" ).effect( "bounce", {times:3}, 1000 );
-    });
-    //settings
-    $( "#dockSettings" ).click(function() {
-    $( "#dockSettings" ).effect( "bounce", {times:3}, 1000 );
-    });
-    
-    
-  </script>
-  <!--background select script-->
-  <script>
-    $('.background1').click(function() {
-    $('.wrapper').css('background-image', 'url(images/wallpaper.jpg)');
-    });
-    $('.background2').click(function() {
-    $('.wrapper').css('background-image', 'url(images/wallpaper2.jpg)');
-    });
-    $('.background3').click(function() {
-    $('.wrapper').css('background-image', 'url(images/wallpaper3.jpg)');
-    });
-    $('.background4').click(function() {
-    $('.wrapper').css('background-image', 'url(images/wallpaper4.jpg)');
-    });
-    $('.background5').click(function() {
-    $('.wrapper').css('background-image', 'url(images/wallpaper5.jpg)');
-    });
-  </script>
-  <script>
-    setTimeout(function(){
-     $('.loaderWrapper').remove();
-         }, 2000);
-         
-    $(".wrapper").hide(0).delay(2000).fadeIn(1000)
-    
-    $('a').click(function (e) {
-        e.preventDefault();                   // prevent default anchor behavior
-        var goTo = this.getAttribute("href"); // store anchor href
-        
-        // do something while timeOut ticks ... 
-        
-        setTimeout(function(){
-             window.location = goTo;
-        },500);       
-    }); 
-    
-    
-  </script>
-  <script>
-    $(function(){
-      $(".loadText").typed({
-        strings: ["ianOS developed by Ian Anderson <br> Built on <br> HTML - Jade <br> CSS - Sass <br> Javascript <br> Version 1.0 - March, 7 2016 <br> loading 100%"],
-         cursorChar: "_",
-        typeSpeed: -75
-      })
-      
-      });     
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-  </script>
+  <script src="js/javascript.js"></script>
 </html>
