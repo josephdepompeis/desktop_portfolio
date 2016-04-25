@@ -4,26 +4,26 @@ html
         meta(charset="utf-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(href="styles.css" rel="stylesheet")
-        
-        
+
+
         link(link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500' rel='stylesheet' type='text/css')
         link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel='stylesheet')
-        
+
         link(rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js")
         script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js")
-        
+
         script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js")
         script(src="js/typed.js")
-        
-        
+
+
     body
         .loaderWrapper
-            #loading 
-                p.loadText 
-                p.loadStatus 
-                
-    
+            #loading
+                p.loadText
+                p.loadStatus
+
+
         .wrapper
             #topNav
                 ul.left
@@ -38,77 +38,77 @@ html
                     li 100%
                     li#time
                     li Ian Anderson
-                    
-                    
-            
-            
+
+
+
+
             .desktop_icon
                 #iconOverview.icon
-                    img(src="images/folder.png" ) 
+                    img(src="images/folder.png" )
                     p Overview
                 #iconAbout.icon
-                    img(src="images/folder.png" ) 
+                    img(src="images/folder.png" )
                     p About
                 #iconPortfolio.icon
-                    img(src="images/folderFill.png" ) 
+                    img(src="images/folderFill.png" )
                     p Portfolio
                 #iconWelcome.icon
-                    img(src="images/folder.png" ) 
+                    img(src="images/folder.png" )
                     p Welcome
-                      
-            
+
+
             .window.windowOverview
                 .windowBar
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.overviewClose
                         li.glyphicon.glyphicon-minus-sign.overviewMin
-                        
-                        
+
+
                     ul.tab
                         li OVERVIEW
-                        
-                        
+
+
                 .windowIcon
-                span.about 
+                span.about
                     h1 Ian Anderson
                     h6 Version 4.0
                     h3 Frontend Web Developer
-                    p Degree 
+                    p Degree
                         span  Business Management B.S.
                     p Experience
                         span ~1.5 years
                     p Languages
-                        span HTML/Jade, CSS/Sass, Javascript/jQuery 
+                        span HTML/Jade, CSS/Sass, Javascript/jQuery
                     p Tools
                         span Git, Photoshop, Atom/Brackets, Emmet
                     p Environments
                         span Windows, Mac, Linux
-                    
-              
-                        
+
+
+
             .window.windowAbout
                 .windowBar
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.aboutClose
                         li.glyphicon.glyphicon-minus-sign.aboutMin
-                        
+
 
                     ul.tab
                         li ABOUT
                 .windowIcon
-                span.about 
+                span.about
                     h1 Ian Anderson
-                    p Degree 
+                    p Degree
                         span Business Management
-                    
-                        
+
+
             .window.windowSettings
                 .windowBar
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.settingsClose
                         li.glyphicon.glyphicon-minus-sign.settingsMin
                     ul.tab
-                        li SETTINGS  
+                        li SETTINGS
                 span.setting
                         .wallpaper
                             h4 Set Wallpaper
@@ -118,10 +118,10 @@ html
                                 li: button.background3 Oceanic
                                 li: button.background4 Silver
                                 li: button.background5 Night Light
-                                
-                        
-            
-            
+
+
+
+
             .window.windowEmail
                 .windowBar
                     ul.button
@@ -130,52 +130,52 @@ html
                     ul.tab
                         li EMAIL to: ian@theiananderson.com
                 form(action="//formspree.io/ianderso222@gmail.com" method="POST")
-                    
-                    input(type="text" name="name" placeholder="Name")     
-                    
-                    input(type="email" name="_replyto" placeholder="Email") 
-                    
-                    textarea(type="text" name="message" placeholder="Let's work on something...") 
+
+                    input(type="text" name="name" placeholder="Name")
+
+                    input(type="email" name="_replyto" placeholder="Email")
+
+                    textarea(type="text" name="message" placeholder="Let's work on something...")
                     input(type="submit" value="SEND")
-            
+
             .window.windowWelcome
                 .windowBar
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.welcomeClose
                         li.glyphicon.glyphicon-minus-sign.welcomeMin
                     ul.tab
-                        li WELCOME  
+                        li WELCOME
                 span.welcomeText
                     h4 Hey there! My name is Ian Anderson. I am a Frontend Web Developer. Welcome to my site!
                     h5 As of <strong><u>3/6/2016</u></strong> I am accepting clients and trying to join your team.
                     h5 Odds are I would love to work with you, so go ahead, drop me a line.
                     h5 - Click on the folders to the right to read some more about me or view some of my work.
                     h5 - Click on the icons at the bottom to view some of my social pages, change the settings of this page, or send me an email.
-                    
+
             .window.windowPortfolio
                 .windowBar
                     ul.button
                         li.glyphicon.glyphicon-remove-sign.portfolioClose
                         li.glyphicon.glyphicon-minus-sign.portfolioMin
                     ul.tab
-                        li PORTFOLIO 
+                        li PORTFOLIO
                 .portfolioGrid
-                    .item#itemPersonal    
+                    .item#itemPersonal
                         img(src="images/Personal.png" )
-                        p Personal Webpage   
-                    .item#itemForest    
+                        p Personal Webpage
+                    .item#itemForest
                         img(src="images/forest_case.png" )
                         p HTML Template
-                    .item#itemCate    
+                    .item#itemCate
                         img(src="images/cate_case1.png" )
                         p MaryCateBrown.com
-                    .item#itemEWF    
+                    .item#itemEWF
                         img(src="images/ewf_case.png" )
                         p EmbryWoodsFarms.com
-                    .item#itemTaco    
+                    .item#itemTaco
                         img(src="images/taco_case1.png" )
                         p Restuarant Mockup
-                    .item#itemNews   
+                    .item#itemNews
                         img(src="images/case_study_news.png" )
                         p News Site Theme
                     .item#itemPrompt
@@ -187,107 +187,87 @@ html
                         li.glyphicon.glyphicon-remove-sign.galleryClose
                         li.glyphicon.glyphicon-minus-sign.galleryMin
                     ul.tab
-                        li PORTFOLIO GALLERY 
+                        li PORTFOLIO GALLERY
                 .galleryWrapper
-                    .galleryItem#personal   
+                    .galleryItem#personal
                         .galleryImage
                             img(src="images/Personal.png" )
                         .galleryText
                             p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
                                 p View Site
-                    .galleryItem#forest    
+                    .galleryItem#forest
                         .galleryImage
                             img(src="images/forest_case.png" )
                         .galleryText
                             p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus iusto debitis odio ipsum nemo, nihil quibusdam accusamus deserunt fugit magni temporibus eligendi sunt in inventore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
                                 p View Site
-                                
+
                     .galleryItem#cate
-                        .galleryImage 
+                        .galleryImage
                             img(src="images/cate_case1.png" )
                         .galleryText
                             p  tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
                                 p View Site
                     .galleryItem#ewf
-                        .galleryImage 
+                        .galleryImage
                             img(src="images/ewf_case.png" )
                         .galleryText
                             p  tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
-                                p View Site     
+                                p View Site
                     .galleryItem#taco
-                        .galleryImage 
+                        .galleryImage
                             img(src="images/taco_case1.png" )
                         .galleryText
                             p  tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
-                                p View Site 
+                                p View Site
                     .galleryItem#news
-                        .galleryImage 
+                        .galleryImage
                             img(src="images/case_study_news.png" )
                         .galleryText
                             p  tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
-                                p View Site            
+                                p View Site
                     .galleryItem#prompts
-                        .galleryImage 
+                        .galleryImage
                             img(src="images/case_prompt.png" )
                         .galleryText
                             p  tore quasi. Ratione, totam dolorem dignissimos. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus libero expedita corrupti ipsum quasi blanditiis ratione porro nostrum, sed dignissimos doloremque nemo, voluptatem quo tempora tempore autem id laboriosam ullam.
                             a(href="")
-                                p View Site      
-            
-                
-            
-            
+                                p View Site
+
+
+
+
             #dock
                 #sort
                     a(href="https://twitter.com/ian_a_anderson" target="_blank")
-                        img(src="images/twitter.png" id="dockTwitter") 
-                        
-                                            
+                        img(src="images/twitter.png" id="dockTwitter")
+
+
                     a(href="https://www.reddit.com/user/ianaanderson/" target="_blank")
                         img(src="images/reddit.png" id="dockReddit")
-                    
+
                     a(href="https://github.com/ianderso222" target="_blank")
                         img(src="images/github.png" id="dockGithub" )
-                    
-                    a(href="https://www.instagram.com/ianderso222/" target="_blank") 
+
+                    a(href="https://www.instagram.com/ianderso222/" target="_blank")
                         img(src="images/insta.png" id="dockInsta")
-                    
-                    
+
+
                     img(src="images/email.png" id="dockEmail")
-                    
-                    
+
+
                     img(src="images/Settings.png" id="dockSettings")
-                    
-                   
-                    
-                    
 
-                    
-                    
+
+
+
+
+
+
     script(src='js/javascript.js')
-    
-    
-        
-        
-    
-        
-        
-        
-    
-     
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
