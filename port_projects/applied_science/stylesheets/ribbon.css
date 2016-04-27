@@ -1,0 +1,143 @@
+.my-ribbon
+{
+  font-size: 30px !important;
+/*font-family: "Open Sans", Helvetica, Arial, sans-serif;*/
+  width: 90%;
+  position: relative;
+  background: #E1DAEB;
+  text-align: center;
+  padding: 2% 2%;
+  float: right;
+ /* The following CSS rules will give stitched look to our element */
+  color: rgba(0,0,0,0.6);
+  text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+  font-weight: bold;
+  font-family: "Josefin Sans",Helvetica,sans-serif;
+  text-decoration: none;
+  -moz-box-shadow: 0 0 0 4px #A6A69A, 2px 1px 4px 4px rgba(10,10,0,.5);
+  -webkit-box-shadow: 0 0 0 4px #A6A69A, 2px 1px 4px 4px rgba(10,10,0,.5);
+  box-shadow: 0 0 0 4px #A6A69A, 2px 1px 6px 4px rgba(10,10,0,.5);
+  border: 5px dashed #aaa;
+  border-top: 5px dashed #ccc;
+  border-left: 5px dashed #ccc;
+  border-radius: 19px;
+}
+
+.my-ribbon:before, .my-ribbon:after
+{
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -.5em;
+  border: 1.5em solid #8F8F84;
+  z-index: -1;
+}
+
+.my-ribbon:before
+{
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+
+.my-ribbon:after
+{
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+
+.quotess
+{
+  float: right !important;
+/*  padding: 2% 2% 2% 2%;*/
+/*margin-top: 2%;*/
+  margin-bottom: 2%;
+}
+
+.bodyimage
+{
+  height: auto;
+  margin-bottom: -4px;
+}
+  
+
+
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px)
+{
+}
+
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px)
+{
+}
+
+.logoimage
+{
+  width: 100%;
+  height: auto;
+}
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px)
+{
+
+  .my-ribbon:before, .my-ribbon:after
+  {
+    display: none;
+  }
+
+  .my-ribbon
+  {
+    width: 97%;
+    padding: 0% 0% 0% 0%;
+  }
+
+  .quotess
+  {
+    padding: 0% 0% 0% 0%;
+    padding-bottom: 2%;
+  }
+
+  .bodyimage
+  {
+    width: auto;
+    height: auto;
+  }
+
+  .logoimage
+  {
+    width: auto;
+    height: auto;
+  }
+}
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px)
+{
+
+  .textlogocontainer
+  {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px)
+{
+
+  .bodyimage
+  {
+    width: 100%;
+    height: auto;
+  }
+
+  .logoimage
+  {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,130 @@
+@import url(http://fonts.googleapis.com/css?family=Montaga);
+
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+
+header, footer, section, nav, article
+{
+    display: block;
+}
+
+body
+{
+    background-color: white;
+    font-size: 18px;
+    line-height: 1.6em;
+    color: #333;
+    font-family: "Josefin Sans",Helvetica,sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6,nav
+{
+    font-family: Montaga,Georgia,serif;
+    color: black;
+    color: #00151A;
+}
+
+h4
+{
+    font-size: 18px;
+}
+
+a
+{
+    border-radius: 29px;
+    color: black;
+}
+
+a:visited
+{
+    color: black;
+}
+
+a:hover
+{
+}
+
+a:visited:hover
+{
+}
+
+header
+{
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    background-color: white;
+}
+
+footer
+{
+    margin-top: 10px;
+    text-align: center;
+}
+
+nav a
+{
+    text-align: center;
+    display: block;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a:hover
+{
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+            0px -5px 35px rgba(255,255,255,0.3);
+}
+
+nav ul li
+{
+    margin: 3px;
+    padding: 3px;
+    border-bottom: 1px;
+}
+
+.addresstile
+{
+    text-align: right;
+    margin-top: 2px;
+}
+
+.textlogo
+{
+    color: rgba(0,0,0,0.6);
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                 0px -5px 35px rgba(255,255,255,0.3);
+    font-size: 54px;
+    font-weight: bold;
+    font-family: "Josefin Sans",Helvetica,sans-serif;
+    text-decoration: none;
+    border: 1px dashed #aaa;
+    border-top: 1px dashed #ccc;
+    border-left: 1px dashed #ccc;
+    border-radius: 9px;
+}
+
+.textlogocontainer
+{
+    display: table-cell;
+    vertical-align: middle;
+    height: 188px;
+}
+
+.navframe
+{
+    font-family: Montaga,Georgia,serif;
+    border: 5px dashed #aaa;
+    border-top: 5px dashed #ccc;
+    border-left: 5px dashed #ccc;
+    border-radius: 19px;
+    color: rgba(0,0,0,0.6);
+    padding: 10px 10px;
+    margin: 3px 3px;
+}
+
+.paddingcenter
+{
+    text-align: center;
+}
